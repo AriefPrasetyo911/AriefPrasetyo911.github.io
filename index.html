@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/34921e17f0.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script src="./xlsx.core.min.js"></script>
+    <script src="./filesaver.js"></script>
+    <script src="./tableExports.js"></script>
+    <title>Youtube Data API v3</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1">Youtube Data API v3</span>
+        </nav>    
+        <div class="card mb-2">
+            <div class="card-body">
+                <form id="formData" class="row">
+                    <div class="col-12">
+                        <div class="form-group mb-0">
+                            <input type="text" class="form-control" id="keywords" aria-describedby="videoID" placeholder="Enter keywords here, e.g. Simulacra 2" required>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row">
+                            <div class="col-5 pr-75">
+                                <select class="custom-select" id="max-vids" required>
+                                    <option selected value=""> Select Max Video</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="col-5 pl-75">
+                                <select class="custom-select" id="max-commns-per-vid" required>
+                                    <option selected value="">Select Max Comments per Video</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="col-2 pl-0">
+                                <button type="submit" class="btn btn-outline-primary btn-block"><i class="fas fa-search"></i> Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="row mt-3">
+                    <div class="col-4 pr-0">
+                        <input type="text" class="form-control" id="filename" aria-describedby="filenameHelp" placeholder="Enter filename here ...">
+                    </div>
+                    <div class="col-2 pr-0">
+                        <select class="custom-select" name="ext" id="selectFileExtention">
+                            <option value="" selected>Select the format</option>
+                            <option value="CSV">CSV</option>
+                            <option value="XSLX">XLSX</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-success btn-block" id="export"><i class="fas fa-file-export"></i> Process Now</button>
+                    </div>
+                </div>
+                <!-- <hr>
+                <div class="form-group mb-0">
+                    <label for="TotalVideo">Total Video</label>
+                    <div id="totalVideo"></div>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="mt-2">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Comment</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+                <tbody id="append">
+                   <!-- append here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

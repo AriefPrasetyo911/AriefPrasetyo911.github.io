@@ -5,33 +5,70 @@ import { faFacebook, faInstagram, faLinkedin, faTwitter } from "@fortawesome/fre
 
 export default function HeroComponent() {
     return (
-        <section id="hero" className="hero section light-background">
-            <img src={bgImage} alt="" />
-            <div className="container mx-auto px-4" data-aos="zoom-out">
-                <div className="flex justify-center">
-                    <div className="w-full lg:w-9/12">
-                        <h2>Arief Budi Prasetyo</h2>
-                        <p>
-                            I'm{" "}
-                            <ReactTyped
-                                strings={[
-                                    "Fullstack Developer",
-                                    "Frontend Developer",
-                                    "Backend Developer",
-                                    "Freelancer",
-                                ]}
-                                typeSpeed={60}
-                                backSpeed={40}
-                                loop
-                                className="typed text-black font-medium italic"
-                            />
-                        </p>
-                        <div className="social-links">
-                            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-                            <a href="https://www.linkedin.com/in/arief-budi-prasetyo-306465122/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
-                        </div>
+        // <section id="hero" className="hero section light-background">
+        //     <img src={bgImage} alt="" />
+        //     <div className="container mx-auto px-4" data-aos="zoom-out">
+        //         <div className="flex justify-center">
+        //             <div className="w-full lg:w-9/12">
+        //                 <h2>Arief Budi Prasetyo</h2>
+        //                 <p>
+        //                     I'm{" "}
+        //                     <ReactTyped
+        //                         strings={[
+        //                             "Fullstack Developer",
+        //                             "Frontend Developer",
+        //                             "Backend Developer",
+        //                             "Freelancer",
+        //                         ]}
+        //                         typeSpeed={60}
+        //                         backSpeed={40}
+        //                         loop
+        //                         className="typed text-black font-medium italic"
+        //                     />
+        //                 </p>
+        //                 <div className="social-links">
+        //                     <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+        //                     <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+        //                     <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+        //                     <a href="https://www.linkedin.com/in/arief-budi-prasetyo-306465122/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </section>
+        // buat 2 kolom kanan dan kiri. Kanan untuk hero dan kiri untuk card
+        <section className="container mx-auto px-6 grid grid-cols-2 gap-4 bg-gray-900 text-white">
+            <div className="col-span-1 flex flex-col justify-center">
+                <div>
+                    <h2>Arief Budi Prasetyo</h2>
+                    <p>
+                        I'm{" "}
+                        <ReactTyped
+                            strings={[
+                                "Fullstack Developer",
+                                "Frontend Developer",
+                                "Backend Developer",
+                                "Freelancer",
+                            ]}
+                            typeSpeed={60}
+                            backSpeed={40}
+                            loop
+                            className="typed text-black font-medium italic"
+                        />
+                    </p>
+                    <div className="social-links">
+                        <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+                        <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+                        <a href="https://www.linkedin.com/in/arief-budi-prasetyo-306465122/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+                    </div>
+                </div>
+            </div>
+            <div className="col-span-1">
+                <div className="card">
+                    <div className="card-body">
+                        <h2 className="card-title">Card Title</h2>
+                        <p>Card Content</p>
                     </div>
                 </div>
             </div>

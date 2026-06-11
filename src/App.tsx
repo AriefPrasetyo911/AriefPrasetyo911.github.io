@@ -1,21 +1,28 @@
 import "./styles/App.css";
 import "./styles/main.css";
 import "./i18n/locales/index";
-import { MenuComponent } from "./components/MenuComponent";
+import { NavigationMenu } from "./components/NavigationMenu";
+import { BrowserRouter } from "react-router-dom";
 import HeroComponent from "./components/HeroComponent";
-import { AboutComponent } from "./components/AboutComponent";
+// import { MenuComponent } from "./components/MenuComponent";
+// import HeroComponent from "./components/HeroComponent";
+// import { AboutComponent } from "./components/AboutComponent";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className="index-page">
-      <MenuComponent />
-      <main className="main">
+    <BrowserRouter>
+      <div className="index-page">
+        <NavigationMenu />
         <HeroComponent />
-        <AboutComponent />
-      </main>
-    </div>
+        {/* <MenuComponent />
+        <main className="main">
+          <HeroComponent />
+          <AboutComponent />
+        </main> */}
+      </div>
+    </BrowserRouter>
   );
 }
 

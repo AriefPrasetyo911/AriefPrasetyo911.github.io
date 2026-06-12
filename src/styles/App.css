@@ -1,5 +1,5 @@
 /* App styles */
-
+/* 
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -186,7 +186,7 @@
     right: 0;
     border-right-color: var(--border);
   }
-}
+} */
 
 /* .nav-link {
   text-decoration: none;
@@ -211,13 +211,117 @@
 }
  */
 
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Variabel tema custom untuk glassmorphism */
+:root {
+  --bg: #0d0d0f;
+  --bg2: #13131a;
+  --bg3: #1a1a24;
+  --border: #2a2a2e;
+  --border2: #3a3a42;
+  --text: #e2e2e6;
+  --text2: #888;
+  --text3: #555;
+  --accent: #7c6cf0;
+  --accent2: #9febc8;
+  --glass-bg: rgba(19, 19, 26, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+.light {
+  --bg: #f5f5f7;
+  --bg2: #ffffff;
+  --bg3: #ebebef;
+  --border: #e0e0e8;
+  --border2: #c8c8d8;
+  --text: #1a1a2e;
+  --text2: #666;
+  --text3: #999;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  background-color: var(--bg);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Custom styles untuk glassmorphism dan efek tambahan */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 0.5px solid var(--glass-border);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 32px;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mengoverride warna DaisyUI agar sesuai tema */
+[data-theme="light"] .btn-primary,
+.light .btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
 .nav-link {
-  background: linear-gradient(90deg, #ffffff, #a855f7, #06b6d4, #ffffff);
+  background: linear-gradient(90deg, var(--text), #a855f7, #06b6d4, var(--text));
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+  font-size: 18px;
 }
 
 .nav-link:hover {

@@ -2,8 +2,8 @@ const id = {
   nav: {
     home: "Beranda",
     about: "Tentang",
+    work: "Pekerjaan",
     resume: "Resume",
-    portfolio: "Portofolio",
     contact: "Kontak",
   },
   common: {

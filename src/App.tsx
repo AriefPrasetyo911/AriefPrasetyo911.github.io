@@ -15,8 +15,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className={`index-page min-h-screen transition-colors duration-500 ${isLight ? 'light' : ''}`} style={{ backgroundColor: 'var(--bg)' }}>
-        <NavigationMenu themeToggle={setIsLight} theme={isLight} />
-        {/* <HeroComponent /> */}
+        <NavigationMenu setTheme={setIsLight} theme={isLight} />
+        <HeroComponent isLight={isLight} />
         {/* <MenuComponent />
         <main className="main">
           <HeroComponent />

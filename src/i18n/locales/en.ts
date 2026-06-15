@@ -2,8 +2,8 @@ const en = {
   nav: {
     home: "Home",
     about: "About",
+    work: "Work",
     resume: "Resume",
-    portfolio: "Portfolio",
     contact: "Contact",
   },
   common: {

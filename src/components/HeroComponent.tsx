@@ -1,12 +1,7 @@
 import { ReactTyped } from "react-typed";
 
 import { useRef, useState, useEffect } from "react";
-
-const STATS = [
-    { value: "8+", label: "Years experience" },
-    { value: "10+", label: "Projects delivered" },
-];
-const TECH_STACK = ["Laravel", "Vue", "NestJS", "TypeScript"];
+import { useTranslation } from "react-i18next";
 
 function AvailableBadge() {
     return (
@@ -27,7 +22,7 @@ function AvailableBadge() {
 
 function ProfileCard({ isLight }: { isLight: boolean }) {
     return (
-        <div className="lg:flex flex justify-center w-2/3 flex-col items-center gap-3.5 rounded-2xl px-4 py-5 transition-transform duration-300 hover:-translate-y-1.5"
+        <div className="lg:flex flex justify-center w-2/3 flex-col items-center gap-3.5 rounded-2xl px-4 py-5 transition-transform duration-300 hover:-translate-y-1.5 mt-7"
             style={{ background: isLight ? "rgba(255,255,255,0.55)" : "rgba(19,19,26,0.6)", border: isLight ? "0.5px solid rgba(0,0,0,0.08)" : "0.5px solid rgba(255,255,255,0.08)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", boxShadow: isLight ? "0 4px 24px rgba(0,0,0,0.08)" : "0 4px 32px rgba(0,0,0,0.35)" }}>
             <div className="flex h-16 w-16 items-center justify-center rounded-full text-lg font-semibold select-none" style={{ background: "rgba(124,108,240,0.12)", border: "1.5px solid rgba(124,108,240,0.35)", color: "#7c6cf0" }}>ABP</div>
             <div className="text-center">
@@ -42,6 +37,7 @@ function ProfileCard({ isLight }: { isLight: boolean }) {
 export default function HeroComponent({ isLight }: { isLight: boolean }) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -80,7 +76,7 @@ export default function HeroComponent({ isLight }: { isLight: boolean }) {
                 >
                     <span className="h-1.5 w-1.5 rounded-full" style={{ background: "#7c6cf0" }} />
                     <span className="text-[16px] font-medium tracking-wide" style={{ color: "#7c6cf0" }}>
-                        Fullstack Developer · AI Integrations
+                        {t('hero.title')}
                     </span>
                 </div>
 
@@ -88,7 +84,7 @@ export default function HeroComponent({ isLight }: { isLight: boolean }) {
                     className="mb-3 leading-tight tracking-tight"
                     style={{ fontSize: "clamp(26px, 5vw, 40px)", fontWeight: 600, color: "var(--text)" }}
                 >
-                    Hello, I'm Arief. I'm a &nbsp;
+                    {t('hero.intro')}&nbsp;
                     <ReactTyped
                         strings={[
                             "Fullstack Developer",
@@ -110,15 +106,14 @@ export default function HeroComponent({ isLight }: { isLight: boolean }) {
                 </h1>
 
                 {/* Sub-headline */}
-                <p className="mb-7 max-w-[840px] text-[16px] leading-relaxed" style={{ color: "var(--text2)" }}>
-                    8+ years crafting scalable web apps. Specializing in{" "}
-                    {TECH_STACK.map((t, i) => (
-                        <span key={t}>
-                            <em className="not-italic" style={{ color: "#7c6cf0" }}>{t}</em>
-                            {i < TECH_STACK.length - 1 && <span style={{ color: "var(--border)" }}> · </span>}
-                        </span>
-                    ))}{" "}
-                    with hands-on AI integration for production SaaS.
+                <p className="mb-3 max-w-[840px] text-[16px] leading-relaxed" style={{ color: "var(--text2)" }}>
+                    {t('hero.expertise')}
+                </p>
+                <p className="mb-3 max-w-[840px] text-[16px] leading-relaxed" style={{ color: "var(--text2)" }}>
+                    {t('hero.experience')}
+                </p>
+                <p className="mb-3 max-w-[840px] text-[16px] leading-relaxed" style={{ color: "var(--text2)" }}>
+                    {t('hero.achievement')}
                 </p>
             </div>
             <div className="col-span-4 px-10 py-10 flex justify-center items-center">

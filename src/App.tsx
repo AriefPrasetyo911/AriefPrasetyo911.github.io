@@ -4,7 +4,7 @@ import "./i18n/locales/index";
 import { NavigationMenu } from "./components/NavigationMenu";
 import { BrowserRouter } from "react-router-dom";
 import HeroComponent from "./components/HeroComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { MenuComponent } from "./components/MenuComponent";
 // import HeroComponent from "./components/HeroComponent";
 // import { AboutComponent } from "./components/AboutComponent";
@@ -12,11 +12,19 @@ import { useState } from "react";
 function App() {
   const [isLight, setIsLight] = useState(false);
 
+  // sync theme
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", isLight);
+  }, [isLight])
+
   return (
     <BrowserRouter>
       <div className={`index-page min-h-screen transition-colors duration-500 ${isLight ? 'light' : ''}`} style={{ backgroundColor: 'var(--bg)' }}>
         <NavigationMenu setTheme={setIsLight} theme={isLight} />
-        <HeroComponent isLight={isLight} />
+
+        <main className="max-w-full mx-auto">
+          <HeroComponent isLight={isLight} />
+        </main>
         {/* <MenuComponent />
         <main className="main">
           <HeroComponent />

@@ -33,6 +33,9 @@ const en = {
     focusBadge: "AI Integration",
     focusDescription: "Multi-vendor LLM strategy (DeepSeek, Groq, Cerebras, Gemini, Claude) with chunked generation and SSE streaming — built to run reliably on shared hosting.",
   },
+  techStack: {
+    sectionLabel: "Tech Stack",
+  },
   common: {
     submit: "Submit",
     cancel: "Cancel",

@@ -33,6 +33,9 @@ const id = {
     focusBadge: "Integrasi AI",
     focusDescription: "Strategi multi-vendor LLM (DeepSeek, Groq, Cerebras, Gemini, Claude) dengan chunked generation dan SSE streaming — dibangun agar berjalan andal di shared hosting.",
   },
+  techStack: {
+    sectionLabel: "Stack Teknologi",
+  },
   common: {
     submit: "Kirim",
     cancel: "Batal",

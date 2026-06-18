@@ -41,7 +41,7 @@ function ProfileCard() {
     )
 }
 
-export default function HeroComponent({ isLight: _isLight }: { isLight: boolean }) {
+export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
     const { t } = useTranslation();

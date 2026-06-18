@@ -3,9 +3,10 @@ import "./styles/main.css";
 import "./i18n/locales/index";
 import { NavigationMenu } from "./components/NavigationMenu";
 import { BrowserRouter } from "react-router-dom";
-import HeroComponent from "./components/HeroComponent";
+import { HeroComponent } from "./components/HeroComponent";
 import { useEffect, useState } from "react";
 import { AboutComponent } from "./components/AboutComponent";
+import { TechStack } from "./components/TechStack";
 // import { MenuComponent } from "./components/MenuComponent";
 // import HeroComponent from "./components/HeroComponent";
 // import { AboutComponent } from "./components/AboutComponent";
@@ -26,6 +27,7 @@ function App() {
         <main className="max-w-full mx-auto">
           <HeroComponent isLight={isLight} />
           <AboutComponent isLight={isLight} />
+          <TechStack isLight={isLight} />
         </main>
         {/* <MenuComponent />
         <main className="main">

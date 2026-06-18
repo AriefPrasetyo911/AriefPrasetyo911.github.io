@@ -214,6 +214,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* Custom variant: aktif ketika ancestor punya class .light (dark = default, light = override) */
+@variant light (&:where(.light, .light *));
+
 /* Variabel tema custom untuk glassmorphism */
 :root {
   --bg: #0d0d0f;
@@ -243,10 +246,30 @@
   --glass-border: rgba(0, 0, 0, 0.08);
 }
 
+/* Sync variabel main.css (--background-color, --default-color) dengan sistem tema kita */
+/* main.css memaksa section { background-color: var(--background-color) } — kita override di sini */
+:root {
+  --background-color: var(--bg);
+  --default-color: var(--text);
+  --surface-color: var(--bg2);
+}
+
 body {
   background-color: var(--bg);
+  color: var(--text);
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* Paksa section tidak override background dari parent */
+section,
+.section {
+  background-color: transparent;
+  color: inherit;
+}
+
+.hero-exp-title span {
+  color: inherit;
 }
 
 /* Custom styles untuk glassmorphism dan efek tambahan */
@@ -335,5 +358,24 @@ body {
 
   100% {
     background-position: 0% center;
+  }
+}
+
+/* pulse efect */
+@theme {
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+
+  @keyframes pulse-dot {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.35;
+      transform: scale(0.8);
+    }
   }
 }

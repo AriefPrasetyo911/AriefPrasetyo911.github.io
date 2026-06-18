@@ -5,6 +5,14 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./en";
 import id from "./id";
 
+// bahasa yang didukung
+export type Language = "en" | "id";
+
+export const languages: Record<Language, { NativeName: string }> = {
+  en: { NativeName: "English" },
+  id: { NativeName: "Bahasa Indonesia" },
+}
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -17,6 +25,10 @@ i18n
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage', 'navigator'], // Prioritas: simpan di localStorage dulu
+      caches: ['localStorage'], // Simpan pilihan user di localStorage
     },
   });
 

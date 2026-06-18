@@ -1,5 +1,6 @@
 import { Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from './shared/LanguageSwitcher';
 // import { Link } from 'react-router-dom'
 
 export const NavigationMenu = ({ setTheme, theme }: {
@@ -42,6 +43,7 @@ export const NavigationMenu = ({ setTheme, theme }: {
                     </ul>
                 </div>
                 <div className='navbar-end gap-2'>
+                    <LanguageSwitcher />
                     <button className={`btn btn-circle btn-sm border border-(--border) bg-transparent text-(--text) ${theme ? 'hover:bg-black/5' : 'hover:bg-white/10'}`} onClick={toggleTheme}>
                         {theme ? <Sun size={18} /> : <Moon size={18} />}
                     </button>

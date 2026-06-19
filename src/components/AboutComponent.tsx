@@ -69,7 +69,7 @@ export const AboutComponent = ({ isLight }: { isLight: boolean }) => {
     }, []);
 
     return (
-        <section ref={sectionRef}
+        <section ref={sectionRef} id="about"
             className="px-7 py-9 md:py-12 w-full"
             style={{
                 borderBottom: "0.5px solid var(--border)",
@@ -131,7 +131,7 @@ export const AboutComponent = ({ isLight }: { isLight: boolean }) => {
                         {t('about.focusBadge')}
                     </span>
 
-                    <p className="text-[12px] leading-relaxed" style={{ color: "var(--text)" }}>
+                    <p className="text-[13px] leading-relaxed" style={{ color: "var(--text)" }}>
                         {t('about.focusDescription')}
                     </p>
                 </div>

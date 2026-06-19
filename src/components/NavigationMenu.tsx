@@ -1,7 +1,7 @@
 import { Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './shared/LanguageSwitcher';
-// import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 
 export const NavigationMenu = ({ setTheme, theme }: {
     setTheme: (theme: boolean) => void;
@@ -12,33 +12,60 @@ export const NavigationMenu = ({ setTheme, theme }: {
     };
 
     const { t } = useTranslation();
+    const [activeSection, setActiveSection] = useState('home');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['home', 'about', 'work', 'resume', 'contact'];
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 3) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const handleHireMe = () => alert('Hire me clicked!');
+
+    const getLinkStyle = (section: string) => ({
+        color: activeSection === section ? 'var(--accent)' : 'inherit',
+        fontWeight: activeSection === section ? 600 : 400,
+    });
 
     return (
         <div className="sticky top-0 z-10 glass-card shadow-lg">
             <div className='navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='navbar-start'>
-                    <a className="text-base font-medium text-(--text)">
+                    <a className="text-base font-medium text-(--text)" href="#home">
                         arief<span className="text-(--accent)">.</span>dev
                     </a>
                 </div>
                 <div className='navbar-center hidden lg:flex'>
-                    <ul className='menu menu-horizontal px-1 text-xs text-(--text3) gap-2'>
+                    <ul className='menu menu-horizontal px-1 text-[14px] text-(--text3) gap-2'>
                         <li>
-                            <a className='nav-link' href='home'>{t('nav.home')}</a>
+                            <a className='nav-link transition-colors duration-300' href='#home' style={getLinkStyle('home')}>{t('nav.home')}</a>
                         </li>
                         <li>
-                            <a className='nav-link' href='about'>{t('nav.about')}</a>
+                            <a className='nav-link transition-colors duration-300' href='#about' style={getLinkStyle('about')}>{t('nav.about')}</a>
                         </li>
                         <li>
-                            <a className='nav-link' href='work'>{t('nav.work')}</a>
+                            <a className='nav-link transition-colors duration-300' href='#work' style={getLinkStyle('work')}>{t('nav.work')}</a>
                         </li>
                         <li>
-                            <a className='nav-link' href='resume'>{t('nav.resume')}</a>
+                            <a className='nav-link transition-colors duration-300' href='#resume' style={getLinkStyle('resume')}>{t('nav.resume')}</a>
                         </li>
                         <li>
-                            <a className='nav-link' href='contact'>{t('nav.contact')}</a>
+                            <a className='nav-link transition-colors duration-300' href='#contact' style={getLinkStyle('contact')}>{t('nav.contact')}</a>
                         </li>
                     </ul>
                 </div>

@@ -68,7 +68,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
     }, []);
 
     return (
-        <section ref={sectionRef}
+        <section ref={sectionRef} id="home"
             className="relative overflow-hidden pb-14 pt-16 w-full grid grid-cols-12 gap-4"
             style={{
                 borderBottom: "0.5px solid var(--border)",
@@ -123,7 +123,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
 
                 <div className="mt-8 w-full grid grid-cols-12 gap-3">
                     <div className="col-span-2">
-                        <p className="hero-exp-title text-lg font-bold text-white light:text-black">
+                        <p className="hero-exp-title text-[22px] font-semibold text-white light:text-black">
                             {t('hero.experienceData.years')}
                             <span className="block text-[13px] text-white/70 light:text-black/60">
                                 {t('hero.experienceData.years_text')}
@@ -131,7 +131,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
                         </p>
                     </div>
                     <div className="col-span-2">
-                        <p className="hero-exp-title text-lg font-bold text-white light:text-black">
+                        <p className="hero-exp-title text-[22px] font-semibold text-white light:text-black">
                             {t('hero.experienceData.projects')}
                             <span className="block text-[13px] text-white/70 light:text-black/60">
                                 {t('hero.experienceData.projects_text')}

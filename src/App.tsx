@@ -7,6 +7,8 @@ import { HeroComponent } from "./components/HeroComponent";
 import { useEffect, useState } from "react";
 import { AboutComponent } from "./components/AboutComponent";
 import { TechStack } from "./components/TechStack";
+import { Experience } from "./components/Experience";
+import { WorkResumes } from "./components/WorkResumes";
 // import { MenuComponent } from "./components/MenuComponent";
 // import HeroComponent from "./components/HeroComponent";
 // import { AboutComponent } from "./components/AboutComponent";
@@ -28,6 +30,8 @@ function App() {
           <HeroComponent isLight={isLight} />
           <AboutComponent isLight={isLight} />
           <TechStack isLight={isLight} />
+          <Experience isLight={isLight} />
+          <WorkResumes isLight={isLight} />
         </main>
         {/* <MenuComponent />
         <main className="main">

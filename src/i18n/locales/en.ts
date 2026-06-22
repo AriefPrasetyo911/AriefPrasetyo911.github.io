@@ -148,129 +148,264 @@ const en = {
   ],
   "projects": [
     {
-      "sectionLabel": "Projects"
-    },
-    {
-      "id": "sinergiedu",
-      "name": "SinergiEdu",
-      "category": "SaaS · AI",
-      "badge": { "label": "SaaS · AI", "kind": "ai" },
-      "period": "2025 – Present",
-      "status": "active",
-      "featured": true,
-      "tags": ["Laravel", "Vue 3", "Inertia.js", "Multi-LLM", "SSE"],
-      "summary": "AI-powered lesson plan generator for Indonesian teachers, aligned with the Kurikulum Merdeka national curriculum.",
-      "description": "A self-founded SaaS platform that helps teachers generate RPP and Modul Ajar documents through a multi-vendor LLM pipeline (DeepSeek, Groq, Cerebras, Gemini, Claude) with chunked generation and real-time SSE streaming, built to run reliably on shared hosting.",
-      "link": ""
-    },
-    {
       "id": "spbe",
+      "workplace": "DIY Provincial Communication and Informatics Service",
       "name": "SPBE GovTech Evaluation System",
-      "category": "Government · Public sector",
-      "badge": { "label": "Gov · Public sector", "kind": "gov" },
-      "period": "2026 – Present",
-      "status": "active",
+      "category": "Government · Public Sector",
+      "badge": { "label": "Gov · Public Sector", "kind": "gov" },
+      "period": "Mar 2026 – Present",
+      "role": "Software Developer",
+      "status": "Active",
       "featured": false,
-      "tags": ["Next.js", "TypeScript", "REST API", "Radix UI", "Tailwind CSS"],
-      "summary": "Large-scale e-government dashboard tracking digital transformation indices (SPBE) across Indonesian government agencies.",
-      "description": "Independently built the submission monitoring module from scratch — including scoring logic, state management, and REST API integration with full error handling — under strict compliance deadlines.",
-      "link": ""
+      "tags": ["Next.js", "React.js", "TypeScript", "REST API", "Radix UI", "Tailwind CSS"],
+      "summary": "Large-scale e-government dashboard tracking digital transformation indices (SPBE) across Indonesian government agencies — handling complex hierarchical datasets, strict type safety, and real-time state management for regional evaluators under compliance deadlines.",
+      "description": "I developed new frontend components, pages, and end-to-end submission monitoring logic from scratch as part of this mission-critical government project. I independently implemented complete assessment logic including state handling, scoring computation, and conditional flows for the submission monitoring feature. The system integrates REST API endpoints with full error handling and response mapping, alongside complex form validation to ensure data integrity across the assessment workflow. I also implemented custom UI components — modals, multi-step flows, and dynamic scoring displays — adapting existing patterns while introducing new interaction logic for hierarchical SPBE data. Applied strict TypeScript interfaces and useMemo / useCallback to prevent re-renders and null-reference errors during dynamic data hydration. Resolved pointer-events and z-index conflicts between Radix UI primitives and SweetAlert2 modals, restoring a seamless and accessible interaction layer. Built with Next.js, React.js, TypeScript, Radix UI, and Tailwind CSS.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "traffic-monitoring",
+      "workplace": "DIY Provincial Communication and Informatics Service",
       "name": "Automated Traffic Monitoring System",
-      "category": "Automation · Government",
-      "badge": { "label": "Automation", "kind": "default" },
-      "period": "2026",
-      "status": "ended",
+      "category": "Government · Automation",
+      "badge": { "label": "Gov · Automation", "kind": "gov" },
+      "period": "Feb 2026 – Mar 2026",
+      "role": "Software Developer",
+      "status": "Ended",
       "featured": false,
-      "tags": ["Puppeteer", "Node.js", "Cron Jobs", "PKG"],
-      "summary": "AI-CCTV traffic monitoring automation tool for Yogyakarta Province's Lebaran 2026 operations.",
-      "description": "Headless browser automation compiled into a zero-dependency desktop executable for internal staff, achieving 100% data consistency across three daily monitoring windows and eliminating manual reporting errors during peak holiday traffic.",
-      "link": ""
+      "tags": ["Puppeteer", "Node.js", "Cron Jobs", "PKG", "JSON Config"],
+      "summary": "Headless browser automation tool compiled into a zero-dependency desktop executable for monitoring AI-CCTV traffic data during the 2026 Eid (Lebaran) homecoming and return flows.",
+      "description": "I developed a specialized automation tool to streamline traffic data collection for the 2026 Eid (Lebaran) Homecoming and Return flows. The system was designed to assist internal authorities in monitoring high-traffic corridors through the provincial AI-CCTV portal. Key technical implementations include: Engineering a headless browser automation using Puppeteer-core, compiled into a standalone Desktop Executable (.exe) using the PKG utility for zero-dependency deployment. Integrated a flexible Cron Job system allowing users to define specific monitoring windows (Morning, Afternoon, Evening) to capture peak traffic data accurately. Built a JSON/File-based configuration system to manage target CCTV lists and set custom monitoring durations per camera. Automated the entire lifecycle: secure authentication, regional filtering, targeted CCTV selection, time-bound counting/analysis, and automated server-side data reporting. Optimized the automation to automatically close browser instances after reporting, ensuring low resource consumption on the host machine. This approach ensured 100% data consistency for provincial traffic reports by automating the end-to-end monitoring lifecycle — from secure login to server-side data synchronization — eliminating human error during high-pressure holiday traffic peaks.",
+      "link": [
+        { "name": "View Demo", "url": "https://jogjaprov.go.id/ai-cctv/" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "jdih",
+      "workplace": "DIY Provincial Communication and Informatics Service",
       "name": "JDIH Legal Documentation Portal",
-      "category": "Government · Public sector",
-      "badge": { "label": "Gov · Public sector", "kind": "gov" },
-      "period": "2026",
-      "status": "ended",
+      "category": "Government · Public Sector",
+      "badge": { "label": "Gov · Public Sector", "kind": "gov" },
+      "period": "Jan 2026 – Feb 2026",
+      "role": "Software Developer",
+      "status": "Active",
       "featured": false,
-      "tags": ["Vue 3", "Tailwind CSS"],
-      "summary": "Centralized legal information gateway for the entire DIY region.",
-      "description": "Developed the admin panel with responsive CRUD operations, live search, bulk action tools for large legal databases, a custom notification system, and dedicated accessibility features ensuring equal access for users with disabilities.",
-      "link": ""
+      "tags": ["Vue 3", "Tailwind CSS", "Composition API", "REST API"],
+      "summary": "Centralized legal information gateway for the entire DIY region, transforming the platform into a high-performance hub that connects citizens to every JDIH agency within Yogyakarta.",
+      "description": "As the Front-End Developer, my mission was to transform this platform into the primary gateway for legal documentation across the entire province. We built a high-performance hub that connects citizens to every JDIH agency within the Yogyakarta region. Key highlights include: Centralized Hub designed as the main portal for anyone searching for legal info in DIY, Inclusivity with dedicated features for users with disabilities to ensure equal access, Mobile Integration streamlining the promotion and access to the JDIH Mobile app, and Performance optimization for a faster, more responsive experience. I was responsible for engineering the Admin Panel using Vue 3, focusing on making management intuitive and efficient. I implemented responsive CRUD operations and Live Search for seamless data handling, Bulk Action tools to manage large legal databases, and a custom Notification System to ensure administrative accuracy. This project was an honor to use technology to strengthen the digital infrastructure of Pemprov DIY and serve the community better.",
+      "link": [
+        { "name": "View Demo", "url": "https://jdih.jogjaprov.go.id" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "appraisal-system",
-      "name": "Performance Appraisal System",
+      "workplace": "Kaigangames Entertainment SDN BHD",
+      "name": "Kaigangames Performance Appraisal System",
       "category": "Internal Tools · HR",
       "badge": { "label": "Internal Tools", "kind": "default" },
-      "period": "2026",
-      "status": "ended",
+      "period": "Sep 2024 – May 2025",
+      "role": "Fullstack Developer",
+      "status": "Ongoing",
       "featured": false,
-      "tags": ["Angular 19", "NestJS", "TypeScript", "REST API", "Swagger", "MySQL", "Bootstrap"],
-      "summary": "End-to-end HR appraisal system enabling structured employee performance evaluation across the organization.",
-      "description": "Built with a modern full-stack architecture ensuring scalability and long-term maintainability, covering the full evaluation cycle from data input to reporting.",
-      "link": ""
+      "tags": ["Angular 19", "NestJS", "TypeScript", "MySQL", "Bootstrap", "REST API"],
+      "summary": "End-to-end HR performance appraisal system replacing manual evaluation processes with a structured, role-based digital workflow.",
+      "description": "I created this system to ease the internal performance appraisal process, which was previously conducted manually. Built with Angular 19 as the front-end framework and NestJS as the backend, with MySQL as the database, the system features multi-role user access (Employee, Manager, Supervisor, HR), comprehensive employee management, user registration and role assignment, self-appraisal for employees, evaluation appraisal for managers and supervisors, HR approval workflow, chart statistics on every user role, and PDF generation for final documents. The project demonstrates a modern full-stack architecture ensuring scalability and long-term maintainability, covering the full evaluation cycle from data input to reporting.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
-      "id": "corporate-website",
-      "name": "Corporate Website Conversion",
+      "id": "nullspace-website",
+      "workplace": "Kaigangames Entertainment SDN BHD",
+      "name": "Nullspace Website",
+      "category": "Game Studio · Website",
+      "badge": { "label": "Game Studio", "kind": "default" },
+      "period": "Jun 2023 – Sep 2023",
+      "role": "Fullstack Developer",
+      "status": "Ended",
+      "featured": false,
+      "tags": ["Angular 16", "Bootstrap", "i18n", "TypeScript"],
+      "summary": "Promotional website for Kaigan Games' new 3D game project, Nullspace, featuring full internationalization support.",
+      "description": "I built this website to introduce the new Kaigan Games 3D Game Project, Nullspace, using Angular 16. The website currently features translation support for Japanese and English, demonstrating a robust i18n implementation that allows the studio to reach a broader international audience. This project showcases modern Angular development with a focus on internationalization and visual presentation for the gaming industry.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "corporate-website-conversion",
+      "workplace": "Kaigangames Entertainment SDN BHD",
+      "name": "Kaigan Games Official Website Conversion",
       "category": "Migration · Frontend",
       "badge": { "label": "Migration", "kind": "default" },
-      "period": "2023",
-      "status": "ended",
+      "period": "Jan 2023 – Mar 2023",
+      "role": "Fullstack Developer",
+      "status": "Ended",
       "featured": false,
-      "tags": ["Angular 15", "Node.js", "Laravel 7", "MySQL", "Bootstrap"],
-      "summary": "Led full migration of a legacy Laravel 7 company website to a modern Angular 15 and Node.js stack.",
-      "description": "Improved frontend performance, decoupled the frontend / backend architecture, and enabled long-term scalability for the company's public-facing site.",
-      "link": ""
+      "tags": ["Angular 15", "Node.js", "Express", "MySQL", "Bootstrap", "Three.js"],
+      "summary": "Full migration of the Kaigan Games official website from Laravel 7 to a modern Angular 15 and Node.js stack.",
+      "description": "I led the complete conversion of the Kaigan Games Official Website from Laravel 7 to Angular 15. The frontend was built with Angular 15, Bootstrap 5, Three.js (for 3D visualizations), jQuery, SweetAlert2, and FontAwesome 5. The backend was restructured using Node.js, Express, and Sequelize for database model handling with MySQL as the database. This migration decoupled the frontend and backend architecture, improved frontend performance, and enabled long-term scalability for the company's public-facing site.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "nareta",
-      "name": "Nareta (Kaigangames Narrator)",
-      "category": "Game Studio",
+      "workplace": "Kaigangames Entertainment SDN BHD",
+      "name": "Kaigangames Nareta (Narrator)",
+      "category": "Game Studio · Interactive",
       "badge": { "label": "Game Studio", "kind": "default" },
-      "period": "2022 – 2023",
-      "status": "ended",
+      "period": "May 2022 – Feb 2023",
+      "role": "Fullstack Developer",
+      "status": "Discontinued",
       "featured": false,
-      "tags": ["Laravel", "Vue 3", "MySQL", "Bootstrap"],
-      "summary": "Interactive story application with dynamic narrative flows.",
-      "description": "Built on a Laravel backend paired with a Vue 3 frontend, demonstrating full-stack integration and user-driven content experience design.",
-      "link": ""
+      "tags": ["Laravel 8", "Vue 3", "Inertia.js", "Bootstrap", "MySQL"],
+      "summary": "Interactive narrative application where users can play and create branching chat-based stories, inspired by the 'Simulacra' game franchise.",
+      "description": "I created Nareta with Laravel 8, Inertia.js, and Vue 3, using Bootstrap 5 for the frontend. In Nareta, you can play stories like a chat experience and choose your choices when options appear. The website concept is to make a chat system similar to the 'Simulacra' franchise, but users can create their own stories by following a guide. Users can register and upload their stories to the website to be played by other users. This project demonstrates full-stack integration with a focus on user-generated content and interactive storytelling.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "al-wildan-website",
+      "workplace": "Private Project",
+      "name": "Al Wildan International Islamic School",
+      "category": "Education · Website",
+      "badge": { "label": "Education", "kind": "default" },
+      "period": "Nov 2020 – Mar 2021",
+      "role": "Fullstack Developer",
+      "status": "Ended",
+      "featured": false,
+      "tags": ["Laravel 7", "Bootstrap", "JavaScript", "MySQL"],
+      "summary": "Comprehensive school management website with student registration, statistics dashboard, and multi-user role system.",
+      "description": "I created the website using the Laravel 7 framework from scratch. The features include: student registration for both domestic and international students, student statistics (number of students, applicants, country of origin), image slider, dynamic dropdown menu, multi-user roles, and email notification when a registrant is accepted. This project showcases a complete full-stack implementation tailored for educational institutions with complex user management needs.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "playsimulacra",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
       "name": "Playsimulacra",
-      "category": "Game Studio",
+      "category": "Game Studio · Storefront",
       "badge": { "label": "Game Studio", "kind": "default" },
-      "period": "2020",
-      "status": "ended",
+      "period": "Jun 2020 – Dec 2020",
+      "role": "Fullstack Developer",
+      "status": "Ended",
       "featured": false,
-      "tags": ["Laravel", "MySQL", "Bootstrap"],
-      "summary": "Game product catalog website serving as the public-facing storefront for a commercial game title.",
-      "description": "Built for performance and responsive display across devices, serving as the official storefront for the game's release.",
-      "link": ""
+      "tags": ["Laravel 7", "Bootstrap 4", "JavaScript", "MySQL"],
+      "summary": "Official game catalog storefront for Kaigan Games, featuring all studio titles with dynamic content updates.",
+      "description": "I created this project using Laravel 7 and Bootstrap 4. Playsimulacra acts as the official 'store' for the studio's games. On the website, visitors can find all created games from the very first to the latest release — so the data is always updated every time the studio creates a new game. This project demonstrates a clean, responsive storefront design optimized for showcasing game products.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
-      "id": "world-debt",
-      "name": "world-debt",
-      "category": "Personal · Data Visualization",
-      "badge": { "label": "Nuxt 4 · WIP", "kind": "default" },
-      "period": "2026",
-      "status": "active",
+      "id": "kaigan-website-old",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Kaigan Games Official Website (Legacy)",
+      "category": "Game Studio · Website",
+      "badge": { "label": "Game Studio", "kind": "default" },
+      "period": "Aug 2020 – Oct 2020",
+      "role": "Fullstack Developer",
+      "status": "Ended",
       "featured": false,
-      "tags": ["Nuxt 4", "Tailwind v4", "i18n"],
-      "summary": "Global debt data visualization tracker with full i18n support.",
-      "description": "A personal side project pulling World Bank and IMF APIs to visualize global debt trends, built as a learning project for the Nuxt 4 ecosystem.",
-      "link": ""
+      "tags": ["Laravel 7", "Bootstrap", "JavaScript", "MySQL"],
+      "summary": "The original Laravel 7 implementation of the Kaigan Games official website, built from scratch with mobile-first responsive design.",
+      "description": "I worked on the Kaigan Games Official Website for approximately 2 months. I created the website from scratch with the latest version of Laravel 7. The design was provided by our web designer, so my role was to implement the design into code. The website is fully mobile-friendly and responsive, demonstrating clean frontend implementation and solid Laravel backend structure.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "bukufi-mobile",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Bukufi Mobile",
+      "category": "Mobile · Streaming",
+      "badge": { "label": "Mobile App", "kind": "default" },
+      "period": "Jan 2018 – May 2018",
+      "role": "Fullstack Developer",
+      "status": "Discontinued",
+      "featured": false,
+      "tags": ["Ionic 3", "Angular", "PayPal API", "Laravel", "REST API"],
+      "summary": "Cross-platform mobile application for book and comic streaming, built with Ionic 3 for Android and iOS.",
+      "description": "I engineered a cross-platform mobile application for the Bukufi book and comic streaming service using the Ionic 3 framework, deploying native builds for both Android and iOS from a single codebase. I integrated multiple third-party authentication APIs, including Facebook Login and Google Sign-In, alongside standard registration to streamline user onboarding. I implemented a secure monetization system by integrating the PayPal API to handle subscription payments for premium content. I connected the mobile app to a custom Laravel 5.4 backend via a RESTful API to manage user accounts, content streaming, and payment statuses.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "bukufi-web",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Bukufi (Website Version)",
+      "category": "Web · Streaming",
+      "badge": { "label": "Web App", "kind": "default" },
+      "period": "Jul 2017 – Mar 2018",
+      "role": "Fullstack Developer",
+      "status": "Discontinued",
+      "featured": false,
+      "tags": ["Laravel 5.4", "Bootstrap 3", "SASS", "PayPal API", "MySQL"],
+      "summary": "Web-based book and comic streaming platform with premium subscription management and PayPal integration.",
+      "description": "Bukufi is a book and comic streamer. Visitors can read books or comics from the collection, but there is also premium paid content. To handle payments, I used the PayPal API. To make it easier for visitors to log in, I provided login with Facebook and Google Plus alongside standard login. Bukufi was built with Laravel 5.4 as the backend and Bootstrap 3 as the frontend, with a combination of SASS, JavaScript, and jQuery. For future features, Bukufi will allow registered users to publish their own books or comics, but the content needs administrator approval before publishing.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "his-hermina",
+      "workplace": "AmtekLab Software House",
+      "name": "Hospital Information System (HIS) for Hermina Group",
+      "category": "Healthcare · Enterprise",
+      "badge": { "label": "Enterprise", "kind": "default" },
+      "period": "May 2016 – Jun 2017",
+      "role": "Frontend Programmer",
+      "status": "Ended",
+      "featured": false,
+      "tags": ["Bootstrap 3", "JavaScript", "jQuery", "SASS", "Frontend"],
+      "summary": "Web-based conversion of the desktop-based Hospital Information System for the Hermina Group in Jakarta.",
+      "description": "This HIS was developed for the Hermina Group in Jakarta. Hermina already had an Information System but it was still desktop-based and they wanted to convert it to web-based and add some new processes. On this project, I worked as a front-end programmer. My job was to create the new layouts needed in the system. To do this, I used Bootstrap 3, JavaScript, jQuery, and the SASS preprocessor to handle complex CSS data. This project demonstrates frontend expertise in enterprise-level healthcare system migration.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     }
   ],
   common: {
     submit: "Submit",
     cancel: "Cancel",
+    backHome: "Back to Home",
+    techStack: "Tech Stack",
+    links: "Links",
+    companyOrganization: "COMPANY / ORGANIZATION",
+    period: "PERIOD",
+    status: "STATUS",
+    category: "CATEGORY",
+    role: "ROLE"
   },
 } as const;
 

@@ -2,23 +2,21 @@ import "./styles/App.css";
 import "./styles/main.css";
 import "./i18n/locales/index";
 import { NavigationMenu } from "./components/NavigationMenu";
-import { BrowserRouter } from "react-router-dom";
-import { HeroComponent } from "./components/HeroComponent";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { AboutComponent } from "./components/AboutComponent";
-import { TechStack } from "./components/TechStack";
-import { Experience } from "./components/Experience";
-import { WorkResumes } from "./components/WorkResumes";
-// import { MenuComponent } from "./components/MenuComponent";
-// import HeroComponent from "./components/HeroComponent";
-// import { AboutComponent } from "./components/AboutComponent";
+import { HomePage } from "./pages/Home";
+import { ProjectDetailPage } from "./pages/ProjectDetail";
 
 function App() {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "light";
+  });
 
   // sync theme
   useEffect(() => {
     document.documentElement.classList.toggle("light", isLight);
+    localStorage.setItem("theme", isLight ? "light" : "dark");
   }, [isLight])
 
   return (
@@ -26,18 +24,11 @@ function App() {
       <div className={`index-page min-h-screen transition-colors duration-500 ${isLight ? 'light' : ''}`} style={{ backgroundColor: 'var(--bg)' }}>
         <NavigationMenu setTheme={setIsLight} theme={isLight} />
 
-        <main className="max-w-full mx-auto">
-          <HeroComponent isLight={isLight} />
-          <AboutComponent isLight={isLight} />
-          <TechStack isLight={isLight} />
-          <Experience isLight={isLight} />
-          <WorkResumes isLight={isLight} />
-        </main>
-        {/* <MenuComponent />
-        <main className="main">
-          <HeroComponent />
-          <AboutComponent />
-        </main> */}
+        {/* Routing halaman */}
+        <Routes>
+          <Route path="/" element={<HomePage isLight={isLight} />} />
+          <Route path="/project/:id" element={<ProjectDetailPage isLight={isLight} />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

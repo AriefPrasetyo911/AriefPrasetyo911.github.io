@@ -148,126 +148,264 @@ const id = {
   ],
   "projects": [
     {
-      "id": "sinergiedu",
-      "name": "SinergiEdu",
-      "category": "SaaS · AI",
-      "badge": { "label": "SaaS · AI", "kind": "ai" },
-      "period": "2025 – Sekarang",
-      "status": "active",
-      "featured": true,
-      "tags": ["Laravel", "Vue 3", "Inertia.js", "Multi-LLM", "SSE"],
-      "summary": "Generator RPP berbasis AI untuk guru-guru Indonesia, sesuai standar Kurikulum Merdeka.",
-      "description": "Platform SaaS yang dibangun sendiri untuk membantu guru membuat dokumen RPP dan Modul Ajar melalui pipeline multi-vendor LLM (DeepSeek, Groq, Cerebras, Gemini, Claude) dengan chunked generation dan streaming SSE real-time, dirancang untuk berjalan andal di shared hosting.",
-      "link": ""
-    },
-    {
       "id": "spbe",
+      "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",
       "name": "Sistem Evaluasi SPBE",
-      "category": "Pemerintahan · Sektor publik",
-      "badge": { "label": "Gov · Sektor publik", "kind": "gov" },
-      "period": "2026 – Sekarang",
-      "status": "active",
+      "category": "Pemerintahan · Sektor Publik",
+      "badge": { "label": "Gov · Sektor Publik", "kind": "gov" },
+      "period": "Mar 2026 – Sekarang",
+      "role": "Software Developer",
+      "status": "Aktif",
       "featured": false,
-      "tags": ["Next.js", "TypeScript", "REST API", "Radix UI", "Tailwind CSS"],
-      "summary": "Dashboard e-government skala besar untuk melacak indeks transformasi digital (SPBE) di instansi pemerintah Indonesia.",
-      "description": "Membangun modul monitoring pengiriman dari nol secara mandiri — termasuk logika penilaian, state management, dan integrasi REST API dengan penanganan error lengkap — di bawah tenggat waktu kepatuhan yang ketat.",
-      "link": ""
+      "tags": ["Next.js", "React.js", "TypeScript", "REST API", "Radix UI", "Tailwind CSS"],
+      "summary": "Dashboard e-government skala besar untuk melacak indeks transformasi digital (SPBE) di seluruh instansi pemerintah Indonesia — menangani dataset hierarkis yang kompleks, type safety yang ketat, dan manajemen state real-time untuk evaluator daerah di bawah tenggat waktu kepatuhan.",
+      "description": "Saya mengembangkan komponen frontend baru, halaman, dan logika monitoring pengajuan end-to-end dari nol sebagai bagian dari proyek pemerintahan yang kritis ini. Secara mandiri, saya mengimplementasikan logika penilaian lengkap yang mencakup penanganan state, komputasi skor, dan alur bersyarat untuk fitur monitoring pengajuan. Sistem ini terintegrasi dengan REST API yang dilengkapi penanganan error dan pemetaan respons, serta validasi form kompleks untuk menjamin integritas data di seluruh alur penilaian. Saya juga mengimplementasikan komponen UI kustom — modal, alur multi-step, dan tampilan skor dinamis — yang mengadaptasi pola yang ada sekaligus memperkenalkan logika interaksi baru untuk data SPBE yang hierarkis. Menerapkan interface TypeScript yang ketat serta useMemo dan useCallback untuk mencegah re-render dan error null-reference selama proses hidrasi data dinamis. Menyelesaikan konflik pointer-events dan z-index antara primitif Radix UI dan modal SweetAlert2, mengembalikan lapisan interaksi yang mulus dan aksesibel. Dibangun dengan Next.js, React.js, TypeScript, Radix UI, dan Tailwind CSS.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "traffic-monitoring",
+      "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",
       "name": "Sistem Otomasi Monitoring Lalu Lintas",
-      "category": "Otomasi · Pemerintahan",
+      "category": "Pemerintahan · Otomasi",
       "badge": { "label": "Otomasi", "kind": "default" },
-      "period": "2026",
-      "status": "ended",
+      "period": "Feb 2026 – Mar 2026",
+      "role": "Software Developer",
+      "status": "Selesai",
       "featured": false,
-      "tags": ["Puppeteer", "Node.js", "Cron Jobs", "PKG"],
-      "summary": "Tool otomasi monitoring lalu lintas AI-CCTV untuk operasi Lebaran 2026 Provinsi Yogyakarta.",
-      "description": "Otomasi headless browser yang dikompilasi menjadi executable desktop tanpa dependensi untuk staf internal, mencapai konsistensi data 100% di tiga jendela monitoring harian dan menghilangkan kesalahan input manual selama puncak arus mudik.",
-      "link": ""
+      "tags": ["Puppeteer", "Node.js", "Cron Jobs", "PKG", "JSON Config"],
+      "summary": "Alat otomasi headless browser yang dikompilasi menjadi executable desktop tanpa dependensi untuk memantau data lalu lintas AI-CCTV selama arus mudik dan balik Lebaran 2026.",
+      "description": "Saya mengembangkan alat otomasi khusus untuk menyederhanakan pengumpulan data lalu lintas untuk arus mudik dan balik Lebaran 2026. Sistem ini dirancang untuk membantu otoritas internal memantau koridor lalu lintas padat melalui portal AI-CCTV provinsi. Implementasi teknis utama meliputi: Otomasi headless browser menggunakan Puppeteer-core, dikompilasi menjadi Executable Desktop (.exe) mandiri dengan utilitas PKG untuk penyebaran tanpa dependensi. Mengintegrasikan sistem Cron Job yang fleksibel yang memungkinkan pengguna menentukan jendela pemantauan spesifik (Pagi, Siang, Sore) untuk menangkap data lalu lintas puncak secara akurat. Membangun sistem konfigurasi berbasis JSON/File untuk mengelola daftar CCTV target dan mengatur durasi pemantauan kustom per kamera. Mengotomatiskan seluruh siklus hidup: autentikasi aman, filter regional, pemilihan CCTV target, penghitungan/analisis terbatas waktu, dan pelaporan data sisi server yang otomatis. Mengoptimalkan otomasi untuk secara otomatis menutup instance browser setelah pelaporan, memastikan konsumsi sumber daya yang rendah pada mesin host. Pendekatan ini menjamin konsistensi data 100% untuk laporan lalu lintas provinsi dengan mengotomatiskan siklus monitoring end-to-end — dari login aman hingga sinkronisasi data sisi server — menghilangkan kesalahan manusia selama puncak lalu lintas liburan yang penuh tekanan.",
+      "link": [
+        { "name": "View Demo", "url": "https://jogjaprov.go.id/ai-cctv/" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "jdih",
+      "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",
       "name": "Portal Dokumentasi Hukum JDIH",
-      "category": "Pemerintahan · Sektor publik",
-      "badge": { "label": "Gov · Sektor publik", "kind": "gov" },
-      "period": "2026",
-      "status": "ended",
+      "category": "Pemerintahan · Sektor Publik",
+      "badge": { "label": "Gov · Sektor Publik", "kind": "gov" },
+      "period": "Jan 2026 – Feb 2026",
+      "role": "Software Developer",
+      "status": "Aktif",
       "featured": false,
-      "tags": ["Vue 3", "Tailwind CSS"],
-      "summary": "Gerbang informasi hukum terpusat untuk seluruh wilayah DIY.",
-      "description": "Mengembangkan panel admin dengan operasi CRUD responsif, pencarian live, bulk action untuk database hukum berskala besar, sistem notifikasi kustom, dan fitur aksesibilitas khusus untuk pengguna disabilitas.",
-      "link": ""
+      "tags": ["Vue 3", "Tailwind CSS", "Composition API", "REST API"],
+      "summary": "Gerbang informasi hukum terpusat untuk seluruh wilayah DIY, mengubah platform menjadi pusat berkinerja tinggi yang menghubungkan warga dengan setiap instansi JDIH di Yogyakarta.",
+      "description": "Sebagai Front-End Developer, misi saya adalah mengubah platform ini menjadi gerbang utama dokumentasi hukum di seluruh provinsi. Kami membangun pusat berkinerja tinggi yang menghubungkan warga dengan setiap instansi JDIH di wilayah Yogyakarta. Sorotan utama meliputi: Hub Terpusat yang dirancang sebagai portal utama bagi siapa pun yang mencari info hukum di DIY, Inklusivitas dengan fitur khusus untuk pengguna disabilitas untuk menjamin akses yang setara, Integrasi Mobile yang menyederhanakan promosi dan akses ke aplikasi JDIH Mobile, dan Optimalisasi Performa untuk pengalaman yang lebih cepat dan responsif. Saya bertanggung jawab merancang Panel Admin menggunakan Vue 3, dengan fokus membuat manajemen menjadi intuitif dan efisien. Saya mengimplementasikan operasi CRUD responsif dan Pencarian Langsung untuk penanganan data yang mulus, alat Bulk Action untuk mengelola database hukum berskala besar, dan Sistem Notifikasi kustom untuk menjamin akurasi administratif. Proyek ini merupakan kehormatan untuk menggunakan teknologi guna memperkuat infrastruktur digital Pemprov DIY dan melayani masyarakat dengan lebih baik.",
+      "link": [
+        { "name": "View Demo", "url": "https://jdih.jogjaprov.go.id" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "appraisal-system",
-      "name": "Sistem Penilaian Kinerja",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Sistem Penilaian Kinerja Kaigangames",
       "category": "Tools Internal · HR",
       "badge": { "label": "Tools Internal", "kind": "default" },
-      "period": "2026",
-      "status": "ended",
+      "period": "Sep 2024 – May 2025",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
       "featured": false,
-      "tags": ["Angular 19", "NestJS", "TypeScript", "REST API", "Swagger", "MySQL", "Bootstrap"],
-      "summary": "Sistem penilaian kinerja HR end-to-end untuk evaluasi karyawan yang terstruktur di seluruh organisasi.",
-      "description": "Dibangun dengan arsitektur full-stack modern yang menjamin skalabilitas dan kemudahan pemeliharaan jangka panjang, mencakup seluruh siklus evaluasi dari input data hingga pelaporan.",
-      "link": ""
+      "tags": ["Angular 19", "NestJS", "TypeScript", "MySQL", "Bootstrap", "REST API"],
+      "summary": "Sistem penilaian kinerja HR end-to-end yang menggantikan proses evaluasi manual dengan alur kerja digital terstruktur berbasis peran.",
+      "description": "Saya menciptakan sistem ini untuk mempermudah proses penilaian kinerja internal yang sebelumnya dilakukan secara manual. Dibangun dengan Angular 19 sebagai framework frontend dan NestJS sebagai backend, dengan MySQL sebagai database, sistem ini dilengkapi dengan akses pengguna multi-peran (Karyawan, Manajer, Supervisor, HR), manajemen karyawan yang komprehensif, registrasi pengguna dan penetapan peran, penilaian mandiri untuk karyawan, penilaian evaluasi untuk manajer dan supervisor, alur persetujuan HR, statistik grafik di setiap peran pengguna, dan generator PDF untuk dokumen final. Proyek ini menunjukkan arsitektur full-stack modern yang menjamin skalabilitas dan kemudahan pemeliharaan jangka panjang, mencakup seluruh siklus evaluasi dari input data hingga pelaporan.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
-      "id": "corporate-website",
-      "name": "Konversi Website Korporat",
+      "id": "nullspace-website",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Website Nullspace",
+      "category": "Studio Game · Website",
+      "badge": { "label": "Studio Game", "kind": "default" },
+      "period": "Jun 2023 – Sep 2023",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
+      "featured": false,
+      "tags": ["Angular 16", "Bootstrap", "i18n", "TypeScript"],
+      "summary": "Website promosi untuk proyek game 3D baru Kaigan Games, Nullspace, dengan dukungan internasionalisasi penuh.",
+      "description": "Saya membangun website ini untuk memperkenalkan proyek game 3D baru Kaigan Games, Nullspace, menggunakan Angular 16. Website ini saat ini memiliki fitur terjemahan ke bahasa Jepang dan Inggris, menunjukkan implementasi i18n yang tangguh yang memungkinkan studio menjangkau audiens internasional yang lebih luas. Proyek ini menunjukkan pengembangan Angular modern dengan fokus pada internasionalisasi dan presentasi visual untuk industri game.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "corporate-website-conversion",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Konversi Website Resmi Kaigan Games",
       "category": "Migrasi · Frontend",
       "badge": { "label": "Migrasi", "kind": "default" },
-      "period": "2023",
-      "status": "ended",
+      "period": "Jan 2023 – Mar 2023",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
       "featured": false,
-      "tags": ["Angular 15", "Node.js", "Laravel 7", "MySQL", "Bootstrap"],
-      "summary": "Memimpin migrasi penuh website perusahaan legacy berbasis Laravel 7 ke stack modern Angular 15 dan Node.js.",
-      "description": "Meningkatkan performa frontend, memisahkan arsitektur frontend / backend, dan memungkinkan skalabilitas jangka panjang untuk situs publik perusahaan.",
-      "link": ""
+      "tags": ["Angular 15", "Node.js", "Express", "MySQL", "Bootstrap", "Three.js"],
+      "summary": "Migrasi penuh website resmi Kaigan Games dari Laravel 7 ke stack modern Angular 15 dan Node.js.",
+      "description": "Saya memimpin konversi lengkap Website Resmi Kaigan Games dari Laravel 7 ke Angular 15. Frontend dibangun dengan Angular 15, Bootstrap 5, Three.js (untuk visualisasi 3D), jQuery, SweetAlert2, dan FontAwesome 5. Backend direstrukturisasi menggunakan Node.js, Express, dan Sequelize untuk penanganan model database dengan MySQL sebagai database. Migrasi ini memisahkan arsitektur frontend dan backend, meningkatkan performa frontend, dan memungkinkan skalabilitas jangka panjang untuk situs publik perusahaan.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "nareta",
-      "name": "Nareta (Kaigangames Narrator)",
-      "category": "Studio Game",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Kaigangames Nareta (Narrator)",
+      "category": "Studio Game · Interaktif",
       "badge": { "label": "Studio Game", "kind": "default" },
-      "period": "2022 – 2023",
-      "status": "ended",
+      "period": "May 2022 – Feb 2023",
+      "role": "Fullstack Developer",
+      "status": "Dihentikan",
       "featured": false,
-      "tags": ["Laravel", "Vue 3", "MySQL", "Bootstrap"],
-      "summary": "Aplikasi cerita interaktif dengan alur naratif yang dinamis.",
-      "description": "Dibangun dengan backend Laravel dan frontend Vue 3, menunjukkan integrasi full-stack dan desain pengalaman konten berbasis pengguna.",
-      "link": ""
+      "tags": ["Laravel 8", "Vue 3", "Inertia.js", "Bootstrap", "MySQL"],
+      "summary": "Aplikasi narasi interaktif di mana pengguna dapat memainkan dan menciptakan cerita berbasis chat bercabang, terinspirasi dari franchise game 'Simulacra'.",
+      "description": "Saya menciptakan Nareta dengan Laravel 8, Inertia.js, dan Vue 3, menggunakan Bootstrap 5 untuk frontend. Di Nareta, Anda dapat memainkan cerita seperti pengalaman chat dan memilih pilihan Anda ketika opsi muncul. Konsep website ini adalah membuat sistem chat mirip dengan franchise 'Simulacra', tetapi pengguna dapat membuat cerita mereka sendiri dengan mengikuti panduan. Pengguna dapat mendaftar dan mengunggah cerita mereka ke website untuk dimainkan oleh pengguna lain. Proyek ini menunjukkan integrasi full-stack dengan fokus pada konten buatan pengguna dan penceritaan interaktif.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "al-wildan-website",
+      "workplace": "Project Pribadi",
+      "name": "Al Wildan International Islamic School",
+      "category": "Pendidikan · Website",
+      "badge": { "label": "Pendidikan", "kind": "default" },
+      "period": "Nov 2020 – Mar 2021",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
+      "featured": false,
+      "tags": ["Laravel 7", "Bootstrap", "JavaScript", "MySQL"],
+      "summary": "Website manajemen sekolah komprehensif dengan registrasi siswa, dashboard statistik, dan sistem multi-peran pengguna.",
+      "description": "Saya membuat website ini menggunakan framework Laravel 7 dari awal. Fitur-fitur yang ada meliputi: registrasi siswa baik dari Indonesia maupun dari luar negeri, statistik siswa (jumlah siswa, jumlah pendaftar, negara asal), slider gambar, menu dropdown dinamis, peran multi-pengguna, dan notifikasi email jika pendaftar diterima. Proyek ini menunjukkan implementasi full-stack yang lengkap yang disesuaikan untuk institusi pendidikan dengan kebutuhan manajemen pengguna yang kompleks.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
       "id": "playsimulacra",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
       "name": "Playsimulacra",
-      "category": "Studio Game",
+      "category": "Studio Game · Etalase",
       "badge": { "label": "Studio Game", "kind": "default" },
-      "period": "2020",
-      "status": "ended",
+      "period": "Jun 2020 – Dec 2020",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
       "featured": false,
-      "tags": ["Laravel", "MySQL", "Bootstrap"],
-      "summary": "Website katalog produk game sebagai etalase publik untuk judul game komersial.",
-      "description": "Dibangun untuk performa dan tampilan responsif di berbagai perangkat, berfungsi sebagai etalase resmi untuk peluncuran game.",
-      "link": ""
+      "tags": ["Laravel 7", "Bootstrap 4", "JavaScript", "MySQL"],
+      "summary": "Toko etalase katalog game resmi untuk Kaigan Games, menampilkan semua judul studio dengan pembaruan konten dinamis.",
+      "description": "Saya membuat proyek ini menggunakan Laravel 7 dan Bootstrap 4. Playsimulacra berfungsi sebagai 'toko' resmi untuk game-game studio. Di website ini, pengunjung dapat menemukan semua game yang dibuat dari yang pertama hingga rilis terbaru — sehingga data selalu diperbarui setiap kali studio membuat game baru. Proyek ini menunjukkan desain toko etalase yang bersih dan responsif yang dioptimalkan untuk menampilkan produk game.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     },
     {
-      "id": "world-debt",
-      "name": "world-debt",
-      "category": "Personal · Visualisasi Data",
-      "badge": { "label": "Nuxt 4 · WIP", "kind": "default" },
-      "period": "2026",
-      "status": "active",
+      "id": "kaigan-website-old",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Website Resmi Kaigan Games (Legacy)",
+      "category": "Studio Game · Website",
+      "badge": { "label": "Studio Game", "kind": "default" },
+      "period": "Agu 2020 – Okt 2020",
+      "role": "Fullstack Developer",
+      "status": "Selesai",
       "featured": false,
-      "tags": ["Nuxt 4", "Tailwind v4", "i18n"],
-      "summary": "Pelacak visualisasi data utang global dengan dukungan i18n penuh.",
-      "description": "Proyek personal yang menarik data dari API World Bank dan IMF untuk memvisualisasikan tren utang global, dibangun sebagai proyek pembelajaran untuk ekosistem Nuxt 4.",
-      "link": ""
+      "tags": ["Laravel 7", "Bootstrap", "JavaScript", "MySQL"],
+      "summary": "Implementasi Laravel 7 asli dari website resmi Kaigan Games, dibangun dari awal dengan desain responsif mobile-first.",
+      "description": "Saya mengerjakan Website Resmi Kaigan Games selama sekitar 2 bulan. Saya membuat website dari awal dengan versi terbaru Laravel 7. Desain disediakan oleh web designer kami, jadi peran saya adalah mengimplementasikan desain ke dalam kode. Website ini ramah mobile dan responsif sepenuhnya, menunjukkan implementasi frontend yang bersih dan struktur backend Laravel yang solid.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "bukufi-mobile",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Bukufi Mobile",
+      "category": "Mobile · Streaming",
+      "badge": { "label": "Aplikasi Mobile", "kind": "default" },
+      "period": "Jan 2018 – May 2018",
+      "role": "Fullstack Developer",
+      "status": "Dihentikan",
+      "featured": false,
+      "tags": ["Ionic 3", "Angular", "PayPal API", "Laravel", "REST API"],
+      "summary": "Aplikasi mobile lintas platform untuk streaming buku dan komik, dibangun dengan Ionic 3 untuk Android dan iOS.",
+      "description": "Saya merancang aplikasi mobile lintas platform untuk layanan streaming buku dan komik Bukufi menggunakan framework Ionic 3, menyebarkan build native untuk Android dan iOS dari satu basis kode. Saya mengintegrasikan beberapa API autentikasi pihak ketiga, termasuk Facebook Login dan Google Sign-In, di samping registrasi standar untuk mempermudah onboarding pengguna. Saya mengimplementasikan sistem monetisasi yang aman dengan mengintegrasikan PayPal API untuk menangani pembayaran langganan untuk konten premium. Saya menghubungkan aplikasi mobile ke backend Laravel 5.4 kustom melalui REST API untuk mengelola akun pengguna, streaming konten, dan status pembayaran.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "bukufi-web",
+      "workplace": "Kaigan Games Entertainment SDN BHD",
+      "name": "Bukufi (Versi Website)",
+      "category": "Web · Streaming",
+      "badge": { "label": "Aplikasi Web", "kind": "default" },
+      "period": "Jul 2017 – Mar 2018",
+      "role": "Fullstack Developer",
+      "status": "Dihentikan",
+      "featured": false,
+      "tags": ["Laravel 5.4", "Bootstrap 3", "SASS", "PayPal API", "MySQL"],
+      "summary": "Platform streaming buku dan komik berbasis web dengan manajemen langganan premium dan integrasi PayPal.",
+      "description": "Bukufi adalah platform streaming buku dan komik. Pengunjung dapat membaca buku atau komik dari koleksi, tetapi ada juga konten berbayar premium. Untuk menangani pembayaran, saya menggunakan PayPal API. Untuk memudahkan pengunjung login, saya menyediakan login dengan Facebook dan Google Plus di samping login standar. Bukufi dibangun dengan Laravel 5.4 sebagai backend dan Bootstrap 3 sebagai frontend, dengan kombinasi SASS, JavaScript, dan jQuery. Untuk fitur ke depan, Bukufi akan memungkinkan pengguna terdaftar untuk menerbitkan buku atau komik mereka sendiri, tetapi konten tersebut memerlukan persetujuan administrator sebelum dipublikasikan.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
+    },
+    {
+      "id": "his-hermina",
+      "workplace": "AmtekLab Software House",
+      "name": "Sistem Informasi Rumah Sakit (HIS) untuk Hermina Group",
+      "category": "Kesehatan · Enterprise",
+      "badge": { "label": "Enterprise", "kind": "default" },
+      "period": "Mei 2016 – Jun 2017",
+      "role": "Frontend Programmer",
+      "status": "Selesai",
+      "featured": false,
+      "tags": ["Bootstrap 3", "JavaScript", "jQuery", "SASS", "Frontend"],
+      "summary": "Konversi berbasis web dari Sistem Informasi Rumah Sakit berbasis desktop untuk Hermina Group di Jakarta.",
+      "description": "HIS ini dikembangkan untuk Hermina Group di Jakarta. Hermina sudah memiliki Sistem Informasi tetapi masih berbasis desktop dan mereka ingin mengonversinya ke berbasis web serta menambahkan beberapa proses baru. Pada proyek ini, saya bekerja sebagai programmer front-end. Tugas saya adalah membuat tata letak baru yang dibutuhkan dalam sistem. Untuk melakukan ini, saya menggunakan Bootstrap 3, JavaScript, jQuery, dan preprosesor SASS untuk menangani data CSS yang kompleks. Proyek ini menunjukkan keahlian frontend dalam migrasi sistem kesehatan skala enterprise.",
+      "link": [
+        { "name": "View Demo", "url": "https://link.to" },
+        { "name": "View Source Code", "url": "https://link.to" }
+      ],
+      "repo": "private"
     }
   ],
   common: {
     submit: "Kirim",
     cancel: "Batal",
+    backHome: "Kembali ke Beranda",
+    techStack: "Stack Teknologi",
+    links: "Link",
+    companyOrganization: "PERUSAHAAN / ORGANISASI",
+    period: "PERIODE",
+    status: "STATUS",
+    category: "KATEGORI",
+    role: "PERAN"
   },
 } as const;
 

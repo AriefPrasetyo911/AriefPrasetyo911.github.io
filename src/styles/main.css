@@ -1452,9 +1452,147 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+/* ─────────────────────────────────────────────────────────────
+   NotFoundPage
+   ───────────────────────────────────────────────────────────── */
+
+@keyframes nf-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nf-pulseDot {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Glitch — pasang .nf-glitch + data-text="404" di elemen teks */
+.nf-glitch {
+  position: relative;
+  animation: nf-glitch-main 4s infinite;
+}
+
+.nf-glitch::before,
+.nf-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.nf-glitch::before {
+  color: #c084fc;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  animation: nf-glitch-top 4s infinite;
+}
+
+.nf-glitch::after {
+  color: #4ade80;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  animation: nf-glitch-bot 4s infinite;
+}
+
+@keyframes nf-glitch-main {
+
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+
+  91% {
+    transform: translate(-2px, 1px);
+  }
+
+  92% {
+    transform: translate(2px, -1px);
+  }
+
+  93% {
+    transform: translate(-1px, 2px);
+  }
+
+  94% {
+    transform: translate(1px, -2px);
+  }
+
+  95% {
+    transform: translate(0);
+  }
+}
+
+@keyframes nf-glitch-top {
+
+  0%,
+  89%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+
+  90% {
+    transform: translate(-3px, 0);
+    opacity: 0.8;
+  }
+
+  91% {
+    transform: translate(3px, 0);
+    opacity: 0.8;
+  }
+
+  92% {
+    transform: translate(-2px, 0);
+    opacity: 0.8;
+  }
+
+  93% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+
+@keyframes nf-glitch-bot {
+
+  0%,
+  88%,
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+
+  89% {
+    transform: translate(3px, 0);
+    opacity: 0.7;
+  }
+
+  90% {
+    transform: translate(-3px, 0);
+    opacity: 0.7;
+  }
+
+  91% {
+    transform: translate(2px, 0);
+    opacity: 0.7;
+  }
+
+  92% {
+    transform: translate(0);
+    opacity: 0;
+  }
 }

@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import { LinkIcon, SquareArrowOutUpRight, Lock, Unlock, Cpu, Globe, Building, Brain, Gamepad2, Briefcase, PencilRuler, LayoutGrid, ShieldUser, Smartphone, BookOpen, Activity, Calendar, Tag, User } from "lucide-react";
+import { LinkIcon, SquareArrowOutUpRight, Lock, Unlock, Globe, Building, Brain, Gamepad2, Briefcase, PencilRuler, LayoutGrid, ShieldUser, Smartphone, BookOpen, Activity, Calendar, Tag, User } from "lucide-react";
 
 export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
     const { id } = useParams();
@@ -57,18 +57,29 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                 <div className="col-span-1 md:col-span-4 lg:col-span-4 ">
                     {/* untuk image / ss project */}
                     <img src={currentProject.image} alt={"Thumbnail " + currentProject.name}
-                        className="w-full h-[250px] object-cover rounded-lg shadow-lg border-gray-300 border-2"
+                        className="w-full h-[250px] object-cover rounded-lg shadow-lg "
+                        style={{
+                            border: "1px solid var(--border)",
+                            background: "var(--bg)",
+                        }}
                     />
 
                     {/* untuk card tags */}
-                    <div className="mt-4 border-gray-200 rounded-xl px-3 py-3 shadow-sm border-2"
-                        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}>
+                    <div className="mt-4 border-gray-200 rounded-xl px-3 py-3 shadow-lg"
+                        style={{
+                            backgroundColor: "var(--bg)", color: "var(--text),", border: "1px solid var(--border)",
+                        }}>
                         <h3 className="text-[12px] font-bold text-gray-500 uppercase tracking-wide mb-3">
                             {t("common.techStack")}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                             {currentProject.tags.map((tag: string, index: number) => (
-                                <span key={index} className="px-2.5 py-1 text-[13px] font-medium rounded-md border border-gray-200 bg-accent/10">
+                                <span key={index} className="px-2.5 py-1 text-[13px] font-medium rounded-md bg-accent/10"
+                                    style={{
+                                        border: "1px solid var(--border)",
+                                        background: "var(--bg)",
+                                        color: "var(--text)"
+                                    }}>
                                     {tag}
                                 </span>
                             ))}
@@ -76,8 +87,8 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                     </div>
 
                     {/* untuk links */}
-                    <div className="mt-4 border-gray-200 rounded-xl px-3 py-3 shadow-sm border-2"
-                        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}>
+                    <div className="mt-4 rounded-xl px-3 py-3 shadow-lg"
+                        style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
                         <h3 className="text-[12px] font-bold text-gray-500 uppercase tracking-wide mb-3">
                             {t("common.links")}
                         </h3>
@@ -87,14 +98,17 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                                     return null;
                                 }
                                 return (
-                                    <a href={linkItem.url} target="_blank" key={index} className="inline-flex items-center justify-center gap-2 px-2.5 py-1.5 text-[13px] font-medium rounded-md border border-gray-200 bg-accent/10 text-center hover:opacity-80 transition-opacity">
+                                    <a href={linkItem.url} target="_blank" key={index} className="inline-flex items-center justify-center gap-2 px-2.5 py-1.5 text-[13px] font-medium rounded-md border bg-accent/10 text-center hover:opacity-80 transition-opacity"
+                                        style={{
+                                            border: "1px solid var(--border)",
+                                        }}>
                                         {linkItem.name === "View Demo" && <SquareArrowOutUpRight size={14} />}
                                         {linkItem.name === "View Source Code" && currentProject.repo === "public" && <LinkIcon size={14} />}
                                         {linkItem.name}
                                     </a>
                                 )
                             })}
-                            <div className={`inline-flex items-center justify-center gap-2 px-2.5 py-1.5 text-[13px] font-medium rounded-md border text-center ${currentProject.repo === "private"
+                            <div className={`inline-flex items-center justify-center gap-2 px-2.5 py-1.5 text-[13px] font-medium rounded-lg border text-center ${currentProject.repo === "private"
                                 ? isLight ? "bg-red-50 border-red-200 text-red-600" : "bg-red-900/30 border-red-800 text-red-400"
                                 : isLight ? "bg-green-50 border-green-200 text-green-600" : "bg-green-900/30 border-green-800 text-green-400"
                                 }`}>
@@ -105,8 +119,8 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-8 lg:col-span-8">
-                    <div className="border-gray-200 rounded-xl px-5 py-3.5 shadow-sm border-2"
-                        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}>
+                    <div className=" rounded-xl px-5 py-3.5 shadow-lg"
+                        style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
                         {/* pils */}
                         <div className="inline-flex items-center px-2 py-0 rounded-md border border-sky-600/40 bg-accent/10">
                             <span className="text-[13px] font-medium flex items-center" style={{
@@ -131,17 +145,25 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                             </span>
                         </div>
                         {/* title */}
-                        <p className="text-[28px] font-bold mt-3 mb-1">
+                        <p className="text-[28px] font-bold mt-7 mb-1">
                             {currentProject.name}
                         </p>
                         {/* description */}
-                        <p className="text-[16px] text-gray-500 mt-5">
+                        <p className="text-[18px] font-normal mt-5 leading-relaxed" style={{
+                            color: "var(--text)"
+                        }}>
                             {currentProject.description}
                         </p>
-                        <hr className="text-gray-500 mt-5 mb-5" />
+                        <hr className="mt-5 mb-5" style={{
+                            borderColor: "var(--border)"
+                        }} />
                         {/* buat card untuk info project */}
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 mt-8">
-                            <div className={`rounded-[10px] border px-4 py-3 ${isLight ? "bg-[#f5f4ef]" : "bg-white/5"}`}>
+                            <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
+                                border: "2px solid var(--border)",
+                                background: "var(--bg)",
+                                color: "var(--text)"
+                            }}>
                                 <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">
                                     {t("common.companyOrganization", "COMPANY / ORG")}
                                 </h3>
@@ -150,7 +172,11 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                                     <span>{currentProject.workplace}</span>
                                 </div>
                             </div>
-                            <div className={`rounded-[10px] border px-4 py-3 ${isLight ? "bg-[#f5f4ef]" : "bg-white/5"}`}>
+                            <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
+                                border: "2px solid var(--border)",
+                                background: "var(--bg)",
+                                color: "var(--text)"
+                            }}>
                                 <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">
                                     {t("common.period", "PERIOD")}
                                 </h3>
@@ -159,7 +185,11 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                                     <span>{currentProject.period}</span>
                                 </div>
                             </div>
-                            <div className={`rounded-[10px] border px-4 py-3 ${isLight ? "bg-[#f5f4ef]" : "bg-white/5"}`}>
+                            <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
+                                border: "2px solid var(--border)",
+                                background: "var(--bg)",
+                                color: "var(--text)"
+                            }}>
                                 <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">
                                     {t("common.status", "STATUS")}
                                 </h3>
@@ -168,7 +198,11 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                                     <span>{currentProject.status}</span>
                                 </div>
                             </div>
-                            <div className={`rounded-[10px] border px-4 py-3 ${isLight ? "bg-[#f5f4ef]" : "bg-white/5"}`}>
+                            <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
+                                border: "2px solid var(--border)",
+                                background: "var(--bg)",
+                                color: "var(--text)"
+                            }}>
                                 <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">
                                     {t("common.category", "CATEGORY")}
                                 </h3>
@@ -177,7 +211,11 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                                     <span>{currentProject.category}</span>
                                 </div>
                             </div>
-                            <div className={`rounded-[10px] border px-4 py-3 ${isLight ? "bg-[#f5f4ef]" : "bg-white/5"}`}>
+                            <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
+                                border: "2px solid var(--border)",
+                                background: "var(--bg)",
+                                color: "var(--text)"
+                            }}>
                                 <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mb-1.5">
                                     {t("common.role", "ROLE")}
                                 </h3>

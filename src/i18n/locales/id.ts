@@ -36,6 +36,22 @@ const id = {
   techStack: {
     sectionLabel: "Stack Teknologi",
   },
+  contactSection: {
+    sectionLabel: "Kontak",
+    title: "Mari bangun sesuatu.",
+    subtitle: "Terbuka untuk proyek lepas, kontrak jangka panjang, dan kolaborasi yang menarik.",
+    emailLabel: "Email",
+    locationLabel: "Lokasi",
+    locationValue: "Yogyakarta, Indonesia · Remote OK",
+    linkedinLabel: "LinkedIn",
+    namePlaceholder: "Nama Anda",
+    emailPlaceholder: "Alamat email",
+    subjectPlaceholder: "Subjek",
+    messagePlaceholder: "Pesan Anda...",
+    sendButton: "Kirim pesan",
+    sendingButton: "Mengirim...",
+    errorMessage: "Gagal mengirim. Coba lagi atau email langsung ke saya.",
+  },
   "experience": [
     {
       "sectionLabel": "Pengalaman",
@@ -147,6 +163,9 @@ const id = {
     }
   ],
   "projects": [
+    {
+      "sectionLabel": "Proyek",
+    },
     {
       "id": "spbe",
       "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",

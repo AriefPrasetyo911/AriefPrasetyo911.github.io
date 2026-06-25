@@ -36,6 +36,22 @@ const en = {
   techStack: {
     sectionLabel: "Tech Stack",
   },
+  contactSection: {
+    sectionLabel: "Contact",
+    title: "Let's build something.",
+    subtitle: "Open to freelance projects, long-term contracts, and interesting collaborations.",
+    emailLabel: "Email",
+    locationLabel: "Location",
+    locationValue: "Yogyakarta, Indonesia · Remote OK",
+    linkedinLabel: "LinkedIn",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "Email address",
+    subjectPlaceholder: "Subject",
+    messagePlaceholder: "Your message...",
+    sendButton: "Send message",
+    sendingButton: "Sending...",
+    errorMessage: "Failed to send. Please try again or email me directly.",
+  },
   "experience": [
     {
       "sectionLabel": "Experience",
@@ -147,6 +163,9 @@ const en = {
     }
   ],
   "projects": [
+    {
+      "sectionLabel": "Projects"
+    },
     {
       "id": "spbe",
       "workplace": "DIY Provincial Communication and Informatics Service",

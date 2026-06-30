@@ -219,7 +219,7 @@ export const TechStack = ({ isLight: _isLight }: { isLight: boolean }) => {
             }}>
 
             <SectionLabel>{t('techStack.sectionLabel')}</SectionLabel>
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 px-10 py-10 gap-3.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 px-4 md:px-10 py-10 gap-3.5">
                 {SKILLS.map((skill, index) => (
                     <SkillChip
                         skill={skill}

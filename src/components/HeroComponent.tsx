@@ -78,18 +78,20 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
                 transitionDelay: "0.1s",
             }}>
 
-            <div className="col-span-8 px-10 py-10">
+            <div className="col-span-12 px-4 md:px-10">
                 {/* Eyebrow */}
                 <div
-                    className="mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5"
+                    className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
                     style={{ background: "rgba(124,108,240,0.10)", border: "0.5px solid rgba(124,108,240,0.30)" }}
                 >
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "#7c6cf0" }} />
-                    <span className="text-[16px] font-medium tracking-wide" style={{ color: "#7c6cf0" }}>
+                    <span className="h-3.5 w-3.5 xl:h-2.5 xl:w-2.5 rounded-full" style={{ background: "#7c6cf0" }} />
+                    <span className="xl:text-[16px] lg:text-[15px] md:text-[14px] text-[14px] font-medium tracking-wide" style={{ color: "#7c6cf0" }}>
                         {t('hero.title')}
                     </span>
                 </div>
+            </div>
 
+            <div className="col-span-12 xl:col-span-8 lg:col-span-7 md:col-span-6 px-4 md:px-10 py-0">
                 <h1
                     className="mb-3 leading-tight tracking-tight"
                     style={{ fontSize: "clamp(26px, 5vw, 40px)", fontWeight: 600, color: "var(--text)" }}
@@ -122,7 +124,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
                 </p>
 
                 <div className="mt-8 w-full grid grid-cols-12 gap-3">
-                    <div className="col-span-2">
+                    <div className="col-span-3 md:col-span-6">
                         <p className="hero-exp-title text-[22px] font-semibold text-white light:text-black">
                             {t('hero.experienceData.years')}
                             <span className="block text-[13px] text-white/70 light:text-black/60">
@@ -130,7 +132,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
                             </span>
                         </p>
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-3 md:col-span-6">
                         <p className="hero-exp-title text-[22px] font-semibold text-white light:text-black">
                             {t('hero.experienceData.projects')}
                             <span className="block text-[13px] text-white/70 light:text-black/60">
@@ -141,7 +143,7 @@ export const HeroComponent = ({ isLight: _isLight }: { isLight: boolean }) => {
                 </div>
 
             </div>
-            <div className="col-span-4 px-10 py-10 flex justify-center items-center">
+            <div className="col-span-12 xl:col-span-4 lg:col-span-5 md:col-span-6 px-4 md:px-10 py-0 flex justify-center items-center">
                 <ProfileCard />
             </div>
         </section>

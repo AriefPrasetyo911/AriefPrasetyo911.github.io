@@ -59,7 +59,7 @@ export const Experience = ({ isLight: _isLight }: { isLight: boolean }) => {
 
             <SectionLabel>{sectionLabel}</SectionLabel>
 
-            <div className="w-full px-10 py-10">
+            <div className="w-full px-4 md:px-10 py-10">
                 {experiences.map((item, index) => {
                     const isLast = index === experiences.length - 1;
 

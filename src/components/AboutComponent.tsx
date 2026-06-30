@@ -81,7 +81,7 @@ export const AboutComponent = ({ isLight }: { isLight: boolean }) => {
         >
             <SectionLabel>{t('about.sectionLabel')}</SectionLabel>
 
-            <div className="px-10 py-10 grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="px-4 md:px-10 py-10 grid md:grid-cols-2 gap-6 md:gap-8">
                 {/* left side — bio & badges */}
                 <div>
                     <h2 className="mb-3 text-[22px] font-semibold md:text-[26px] tracking-tight"

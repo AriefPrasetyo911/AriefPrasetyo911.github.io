@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import { LinkIcon, SquareArrowOutUpRight, Lock, Unlock, Globe, Building, Brain, Gamepad2, Briefcase, PencilRuler, LayoutGrid, ShieldUser, Smartphone, BookOpen, Activity, Calendar, Tag, User } from "lucide-react";
+import { LinkIcon, SquareArrowOutUpRight, Lock, Unlock, Globe, Building, Brain, Gamepad2, Briefcase, PencilRuler, LayoutGrid, ShieldUser, Smartphone, BookOpen, Activity, Calendar, Tag, User, Newspaper, AlertTriangle, Lightbulb } from "lucide-react";
 
 export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
     const { id } = useParams();
@@ -15,9 +15,13 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
     // load data i18n
     const projectsRaw = t("projects", { returnObjects: true }) as any[]
     const projects = projectsRaw.slice(1);
+    console.log("projectsRaw", projectsRaw);
+
 
     // find project
     const currentProject = projects.find(p => p.id === id);
+    console.log("currentProject", currentProject);
+
 
     // jika project tidak ada
     if (!currentProject) {
@@ -119,7 +123,7 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                     </div>
                 </div>
                 <div className="col-span-1 md:col-span-8 lg:col-span-8">
-                    <div className=" rounded-xl px-5 py-3.5 shadow-lg"
+                    <div className="rounded-xl px-5 py-3.5 shadow-lg"
                         style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
                         {/* pils */}
                         <div className="inline-flex items-center px-2 py-0 rounded-md border border-sky-600/40 bg-accent/10">
@@ -148,15 +152,16 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                         <p className="text-[28px] font-bold mt-7 mb-1">
                             {currentProject.name}
                         </p>
-                        {/* description */}
+                        {/* summary */}
                         <p className="text-[18px] font-normal mt-5 leading-relaxed" style={{
                             color: "var(--text)"
                         }}>
-                            {currentProject.description}
+                            {currentProject.summary}
                         </p>
                         <hr className="mt-5 mb-5" style={{
                             borderColor: "var(--border)"
                         }} />
+
                         {/* buat card untuk info project */}
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 mt-8">
                             <div className={`rounded-[10px] px-4 py-3 shadow-lg`} style={{
@@ -226,6 +231,70 @@ export const ProjectDetailPage = ({ isLight }: { isLight: boolean }) => {
                             </div>
                         </div>
                     </div>
+
+                    {/* description */}
+                    <div className="rounded-xl px-5 py-3.5 shadow-lg mt-5"
+                        style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
+                        <p className="text-[28px] font-bold mt-1 mb-7 flex ">
+                            <Newspaper size={28} className="mr-2.5" /> {projectsRaw[0].descriptionLabel}
+                        </p>
+                        <p className="text-[18px] font-normal mt-5 leading-relaxed" style={{
+                            color: "var(--text)"
+                        }}>
+                            {currentProject.description}
+                        </p>
+                    </div>
+
+                    {/* key & highlight */}
+                    <div className="rounded-xl px-5 py-3.5 shadow-lg mt-5"
+                        style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
+                        <p className="text-[28px] font-bold mt-1 mb-7 flex ">
+                            <Newspaper size={28} className="mr-2.5" /> {projectsRaw[0].keyHighlightsLabel}
+                        </p>
+                        <p className="text-[18px] font-normal mt-5 leading-relaxed" style={{
+                            color: "var(--text)"
+                        }}>
+                            {currentProject.highlights?.map((highlight: any, index: number) => (
+                                <ul key={index} className="list-disc pl-4">
+                                    <li className="mb-1.5">{typeof highlight === 'object' && highlight !== null ? highlight.text : highlight}</li>
+                                </ul>
+                            ))}
+                        </p>
+                    </div>
+
+                    {/* challenge and solution */}
+                    {currentProject.challenges && currentProject.challenges.length > 0 && (
+                        <div className="rounded-xl px-5 py-5 shadow-lg mt-5"
+                            style={{ backgroundColor: "var(--bg)", color: "var(--text)", border: "1px solid var(--border)" }}>
+                            <p className="text-[28px] font-bold mt-1 mb-6 flex items-center">
+                                <Newspaper size={28} className="mr-2.5" /> {projectsRaw[0].challengesSolutionsLabel}
+                            </p>
+                            <div className="flex flex-col gap-4">
+                                {currentProject.challenges.map((challenge: any, index: number) => (
+                                    <div key={index} className="rounded-lg overflow-hidden"
+                                        style={{ border: "1px solid var(--border)" }}>
+                                        {/* Challenge header */}
+                                        <div className="flex items-start gap-3 px-4 py-3"
+                                            style={{ backgroundColor: "color-mix(in srgb, var(--accent) 8%, transparent)" }}>
+                                            <AlertTriangle size={15} className="mt-0.5 shrink-0" style={{ color: "var(--accent)", opacity: 0.8 }} />
+                                            <p className="text-[13px] font-semibold uppercase tracking-wide leading-snug"
+                                                style={{ color: "var(--accent)" }}>
+                                                {challenge.title}
+                                            </p>
+                                        </div>
+                                        {/* Solution body */}
+                                        <div className="flex items-start gap-3 px-4 py-3"
+                                            style={{ borderTop: "1px solid var(--border)" }}>
+                                            <Lightbulb size={15} className="mt-0.5 shrink-0 text-yellow-500" />
+                                            <p className="text-[14px] leading-relaxed" style={{ color: "var(--text)", opacity: 0.85 }}>
+                                                {challenge.solution}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </main>

@@ -2,6 +2,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './shared/LanguageSwitcher';
 import { useState, useEffect } from 'react';
+import NeonLogo from './shared/NeonLogo';
 
 export const NavigationMenu = ({ setTheme, theme }: {
     setTheme: (theme: boolean) => void;
@@ -35,7 +36,11 @@ export const NavigationMenu = ({ setTheme, theme }: {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleHireMe = () => alert('Hire me clicked!');
+    const WHATSAPP_NUMBER = "6282213247456";
+    const WHATSAPP_MESSAGE = encodeURIComponent("Hi Arief! I'd like to discuss a potential collaboration with you.");
+    const handleHireMe = () => {
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`, "_blank", "noopener,noreferrer");
+    };
 
     const getLinkStyle = (section: string) => ({
         color: activeSection === section ? 'var(--accent)' : 'inherit',
@@ -46,8 +51,8 @@ export const NavigationMenu = ({ setTheme, theme }: {
         <div className="sticky top-0 z-10 glass-card shadow-lg">
             <div className='navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='navbar-start'>
-                    <a className="text-base font-medium text-(--text)" href="#home">
-                        arief<span className="text-(--accent)">.</span>dev
+                    <a className="text-base font-medium text-(--text)" href="/">
+                        <NeonLogo />
                     </a>
                 </div>
                 <div className='navbar-center hidden lg:flex'>

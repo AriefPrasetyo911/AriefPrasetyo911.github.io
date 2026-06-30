@@ -192,13 +192,13 @@ export const ContactComponent = ({ isLight }: { isLight: boolean }) => {
                                         {t('contactSection.linkedinLabel')}
                                     </div>
                                     <a
-                                        href="https://linkedin.com/in/arief-budi-prasetyo"
+                                        href="https://www.linkedin.com/in/arief-budi-prasetyo-306465122/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-[18px] font-bold hover:opacity-85 transition-opacity"
                                         style={{ color: "var(--text)" }}
                                     >
-                                        arief-budi-prasetyo
+                                        https://www.linkedin.com/in/arief-budi-prasetyo-306465122/
                                     </a>
                                 </div>
                             </div>

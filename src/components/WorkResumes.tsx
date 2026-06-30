@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import SectionLabel from "./shared/SectionLabel";
-import { Brain, Landmark, Briefcase, ArrowRightLeft, Gamepad2, Globe } from "lucide-react";
+import { Brain, Landmark, Briefcase, ArrowRightLeft, Gamepad2, Globe, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface Projects {
@@ -22,13 +22,21 @@ interface ProjectTitle {
     sectionLabel: string;
 }
 
-const getProjectIcon = (id: string) => {
+const getProjectIcon = (id: string, label: string) => {
+    const l = (label || '').toLowerCase();
+    if (l.includes('game')) return Gamepad2;
+    if (l.includes('internal') || l.includes('tool')) return Monitor;
+    if (l.includes('migration') || l.includes('conversion')) return ArrowRightLeft;
+    if (l.includes('gov')) return Landmark;
+    if (l.includes('ai')) return Brain;
+    if (l.includes('web')) return Globe;
+
     switch (id) {
         case 'sinergiedu': return Brain;
         case 'spbe': return Landmark;
         case 'jdih': return Landmark;
         case 'traffic-monitoring': return Landmark;
-        case 'appraisal-system': return Briefcase;
+        case 'appraisal-system': return Monitor;
         case 'corporate-website': return ArrowRightLeft;
         case 'nareta':
         case 'playsimulacra': return Gamepad2;
@@ -125,9 +133,9 @@ export const WorkResumes = ({ isLight: _isLight }: { isLight: boolean }) => {
 
             <SectionLabel>{sectionLabel}</SectionLabel>
 
-            <div className="w-full px-10 py-10 grid grid-cols-2 md:grid-cols-3 gap-5">
+            <div className="w-full px-4 md:px-10 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {displayedProjects.map((item, index) => {
-                    const Icon = getProjectIcon(item.id);
+                    const Icon = getProjectIcon(item.id, item.badge?.label || '');
                     const badgeStyles = getBadgeStyles(item.badge.kind);
                     const headerBg = getHeaderBg(item.badge.kind);
                     const iconColor = getIconColor(item.badge.kind);

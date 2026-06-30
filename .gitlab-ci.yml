@@ -1,5 +1,6 @@
 variables:
-  GIT_STRATEGY: none
+  GIT_STRATEGY: clone
+  GIT_DEPTH: 0
 
 stages:
   - mirror
@@ -12,17 +13,13 @@ mirror_to_github:
     - apk add --no-cache git
 
   script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git repo
-    - cd repo
-
-    - git checkout master
-
     - git config user.name "GitLab CI"
     - git config user.email "ci@gitlab.com"
 
+    - git remote remove github || true
     - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/AriefPrasetyo911.github.io.git
 
-    - git push github HEAD:refs/heads/main --force
+    - git push github HEAD:main --force
 
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

@@ -3,9 +3,9 @@ name: Deploy React Profile Website to GitHub Pages
 on:
   push:
     branches: 
-      - main
+      - master
 
-permission:
+permissions:
   contents: read
   pages: write
   id-token: write
@@ -38,14 +38,16 @@ jobs:
   deploy:
     needs: build
 
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
     steps:
       - id: deployment
-      - uses: actions/deploy-pages@v4
-
-      
-    
+        uses: actions/deploy-pages@v4 

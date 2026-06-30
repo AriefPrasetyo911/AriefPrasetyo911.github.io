@@ -14,7 +14,7 @@ mirror_to_github:
 
     - git remote remove github || true
 
-    - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/arief.prasetyo911.git
+    - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/AriefPrasetyo911.github.io.git
     - git push --force github HEAD:refs/heads/main
 
   when: always

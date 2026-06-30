@@ -9,12 +9,16 @@ mirror_to_github:
     - apk add --no-cache git
     
   script:
-    - git config --global user.name "Gitlab CI"
-    - git config --global user.email "ci@gitlab.com"
+    - git --version
+    - git remote -v
+    - git branch -a
+    - git rev-parse HEAD
+    - git log --oneline --graph -10
+    - git count-objects -v
 
     - git remote remove github || true
-
     - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/AriefPrasetyo911.github.io.git
-    - git push --force github HEAD:refs/heads/main
+
+    - git push github HEAD:refs/heads/main --force
 
   when: always

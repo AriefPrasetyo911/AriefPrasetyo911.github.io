@@ -17,5 +17,5 @@ mirror_to_github:
     - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/arief.prasetyo911.git
     - git push github HEAD:main --force
 
-  only:
-  - main
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

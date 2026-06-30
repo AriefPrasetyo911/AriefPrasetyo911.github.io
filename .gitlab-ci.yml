@@ -1,0 +1,21 @@
+stages:
+  - mirror
+
+mirror_to_github:
+  stage: mirror
+  image: alpine:latest
+
+  before_script:
+    - apk add --no-cache git
+    
+  script:
+    - git config --global user.name "Gitlab CI"
+    - git config --global user.email "ci@gitlab.com"
+
+    - git remote remove github || true
+
+    - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/arief.prasetyo911.git
+    - git push github HEAD:main --force
+
+  only:
+  - main

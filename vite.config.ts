@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/arief.prasetyo911/",
+  base: "/",
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),

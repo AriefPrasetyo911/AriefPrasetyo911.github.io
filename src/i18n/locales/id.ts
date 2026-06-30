@@ -201,6 +201,75 @@ const id = {
       "challengesSolutionsLabel": "Tantangan & Solusi"
     },
     {
+      "id": "profile-website",
+      "workplace": "Proyek Pribadi",
+      "name": "Portofolio Pribadi Website",
+      "category": "Web · Portofolio",
+      "badge": {
+        "label": "Portofolio",
+        "kind": "default"
+      },
+      "period": "Jun 2026 – Sekarang",
+      "role": "Fullstack Developer",
+      "status": "active",
+      "statusLabel": "Aktif",
+      "featured": false,
+      "tags": [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "i18next",
+        "React Router"
+      ],
+      "accentTags": [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "summary": "Website portofolio pribadi modern yang dibangun dengan React 19, TypeScript, dan Vite — dilengkapi internasionalisasi penuh (Inggris/Indonesia), bagian konten dinamis, dan desain responsif bersih dengan Tailwind CSS.",
+      "description": "Saya membangun website portofolio ini untuk menampilkan pengalaman profesional, proyek, dan keterampilan teknis saya. Situs ini dibangun dengan React 19 menggunakan TypeScript untuk type safety dan Vite untuk build development yang cepat. Dilengkapi dukungan internasionalisasi penuh dengan i18next untuk bahasa Inggris dan Indonesia, routing dinamis dengan React Router, dan tata letak responsif yang dibangun sepenuhnya dengan Tailwind CSS dan komponen DaisyUI. Proyek ini mencakup bagian timeline pengalaman, galeri proyek dengan tampilan detail, tampilan tech stack, dan formulir kontak yang terintegrasi dengan EmailJS.",
+      "highlights": [
+        {
+          "text": "Internasionalisasi penuh (i18n) mendukung bahasa Inggris dan Indonesia dengan perpindahan konten dinamis"
+        },
+        {
+          "text": "Arsitektur kompatibel dengan server-side rendering menggunakan React 19 dan Vite untuk performa optimal"
+        },
+        {
+          "text": "Desain responsif dibangun dengan Tailwind CSS dan komponen DaisyUI, memastikan rendering sempurna di semua perangkat"
+        },
+        {
+          "text": "Halaman detail proyek dinamis dengan data terstruktur dari file terjemahan i18n"
+        },
+        {
+          "text": "Formulir kontak terintegrasi dengan EmailJS untuk pengiriman pesan langsung tanpa infrastruktur backend"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Integrasi i18n type-safe",
+          "solution": "Menyusun file terjemahan dengan asersi `as const` untuk menjaga type safety TypeScript yang ketat di semua file lokal"
+        },
+        {
+          "title": "Rendering data proyek kompleks",
+          "solution": "Merancang struktur data rekursif untuk proyek dengan bagian highlight dan tantangan bersarang, diurai secara dinamis dari file terjemahan i18n"
+        }
+      ],
+      "links": [
+        {
+          "label": "Lihat demo",
+          "url": "https://ariefprasetyo911.github.io",
+          "icon": "external"
+        },
+        {
+          "label": "Source code",
+          "url": "https://github.com/AriefPrasetyo911/AriefPrasetyo911.github.io",
+          "icon": "github"
+        }
+      ]
+    },
+    {
       "id": "spbe",
       "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",
       "name": "Sistem Evaluasi SPBE",
@@ -1038,7 +1107,7 @@ const id = {
           "icon": "lock"
         }
       ]
-    }
+    },
   ],
   common: {
     submit: "Kirim",

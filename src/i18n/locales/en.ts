@@ -201,6 +201,75 @@ const en = {
       "challengesSolutionsLabel": "Challenges & solutions"
     },
     {
+      "id": "profile-website",
+      "workplace": "Personal Project",
+      "name": "Personal Portfolio Website",
+      "category": "Web · Portfolio",
+      "badge": {
+        "label": "Portfolio",
+        "kind": "default"
+      },
+      "period": "Jun 2026 – Present",
+      "role": "Fullstack Developer",
+      "status": "active",
+      "statusLabel": "Active",
+      "featured": false,
+      "tags": [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "i18next",
+        "React Router"
+      ],
+      "accentTags": [
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "summary": "Modern personal portfolio website built with React 19, TypeScript, and Vite — featuring full internationalisation (English/Indonesian), dynamic content sections, and a clean, responsive design with Tailwind CSS.",
+      "description": "I built this portfolio website to showcase my professional experience, projects, and technical skills. The site is built with React 19 using TypeScript for type safety and Vite for fast development builds. It features full internationalisation support with i18next for both English and Indonesian languages, dynamic routing with React Router, and a responsive layout built entirely with Tailwind CSS and DaisyUI components. The project includes sections for experience timeline, project gallery with detailed views, tech stack display, and a contact form integrated with EmailJS.",
+      "highlights": [
+        {
+          "text": "Full internationalisation (i18n) supporting English and Indonesian with dynamic content switching"
+        },
+        {
+          "text": "Server-side rendered compatible architecture with React 19 and Vite for optimal performance"
+        },
+        {
+          "text": "Responsive design built with Tailwind CSS and DaisyUI components, ensuring pixel-perfect rendering across all devices"
+        },
+        {
+          "text": "Dynamic project detail pages with structured data from i18n translation files"
+        },
+        {
+          "text": "Integrated contact form with EmailJS for direct messaging without backend infrastructure"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Type-safe i18n integration",
+          "solution": "Structured translation files with `as const` assertions to maintain strict TypeScript type safety across all locale files"
+        },
+        {
+          "title": "Complex project data rendering",
+          "solution": "Designed a recursive data structure for projects with nested highlights and challenges sections, parsed dynamically from i18n translation files"
+        }
+      ],
+      "links": [
+        {
+          "label": "Live demo",
+          "url": "https://ariefprasetyo911.github.io",
+          "icon": "external"
+        },
+        {
+          "label": "Source code",
+          "url": "https://github.com/AriefPrasetyo911/AriefPrasetyo911.github.io",
+          "icon": "github"
+        }
+      ]
+    },
+    {
       "id": "spbe",
       "workplace": "Dinas Komunikasi dan Informatika Provinsi DIY",
       "name": "SPBE GovTech Evaluation System",
@@ -1038,7 +1107,7 @@ const en = {
           "icon": "lock"
         }
       ]
-    }
+    },
   ],
   common: {
     submit: "Submit",
